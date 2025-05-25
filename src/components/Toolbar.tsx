@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
@@ -26,7 +26,12 @@ export function Toolbar() {
     <div id="toolbar" ref={toolbarRef}>
       <label>
         <span>Theme</span>
-        <input type="checkbox" />
+        <button type="button"></button>
+        <div className="dropdown" popover="">
+          <button type="button">Temp 1</button>
+          <button type="button">Temp 2</button>
+          <button type="button">Temp 3</button>
+        </div>
       </label>
       <label>
         <span>Transparent</span>
