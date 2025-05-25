@@ -383,7 +383,7 @@ img {
 #card-content textarea,
 .markdown-raw-highlighted {
   width: 100%;
-  min-height: 200px;
+  min-height: 1lh;
   height: 100%;
   font-family: monospace;
   font-size: 1.6rem;
