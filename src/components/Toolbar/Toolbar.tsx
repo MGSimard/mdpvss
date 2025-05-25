@@ -27,7 +27,7 @@ export function Toolbar() {
   });
 
   return (
-    <div id="toolbar" ref={toolbarRef} aria-role="toolbar">
+    <div id="toolbar" ref={toolbarRef} role="toolbar">
       <div id="toolbar-inner">
         <div id="toolbar-left">
           <div id="toolbar-left-inner"></div>
