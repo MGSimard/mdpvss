@@ -6,6 +6,8 @@
 
 ## Task List
 
+- [ ] Look into gsap flip for morph recommended by jh3yy
+
 - [ ] Core layout
 - [ ] Resizeable canvas (width)
 - [ ] Draggable/Magnetic toolbar (collapsible too?)
