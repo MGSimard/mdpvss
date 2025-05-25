@@ -24,7 +24,10 @@ export function Markdown() {
         theme={myTheme}
         addDefaultStyles={false}
         showLanguage={false}>
-        {textareaContent}
+        {textareaContent
+          .split("\n")
+          .map((line) => (line === "" ? "\u00A0" : line))
+          .join("\n")}
       </ShikiHighlighter>
     </div>
   );

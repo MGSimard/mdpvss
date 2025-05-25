@@ -110,10 +110,10 @@ img {
     1rem 100%,
     0 calc(100% - 1rem)
   );
-}
-#toolbar:hover,
-#toolbar:has(:focus-visible) {
-  background-color: var(--clrEleBorderHover);
+  &:hover,
+  &:has(:focus-visible) {
+    background-color: var(--clrEleBorderHover);
+  }
 }
 #toolbar-inner {
   display: flex;
@@ -162,12 +162,12 @@ img {
     100% 100%,
     0 100%
   );
-}
-#toolbar-left-inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--clrEleTrimIdle);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--clrEleTrimIdle);
+  }
 }
 #toolbar:hover #toolbar-left-inner::before,
 #toolbar:has(:focus-visible) #toolbar-left-inner::before {
@@ -199,16 +199,16 @@ img {
     calc(100% - 0.4rem) 100%,
     0 100%
   );
-}
-.setting:hover,
-.setting:focus-visible {
-  background: var(--clrEleBorderHover);
-}
-.setting:active {
-  color: var(--clrBg);
-}
-.setting[aria-checked="true"] {
-  background: var(--clrEleBorderEnabled);
+  &:hover,
+  &:focus-visible {
+    background: var(--clrEleBorderHover);
+  }
+  &:active {
+    color: var(--clrBg);
+  }
+  &[aria-checked="true"] {
+    background: var(--clrEleBorderEnabled);
+  }
 }
 .setting > span {
   position: relative;
@@ -224,13 +224,13 @@ img {
     calc(100% - 0.35rem) 100%,
     0 100%
   );
-}
-.setting > span::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 .setting:hover > span::before,
 .setting:focus-visible > span::before {
@@ -261,10 +261,11 @@ img {
   font-size: 1.4rem;
   color: var(--clrPrimary);
   transition: color 0.2s ease-in-out;
-}
-.setting .padding-value.highlight {
-  color: var(--clrSecondary);
-  transition: none;
+
+  &.highlight {
+    color: var(--clrSecondary);
+    transition: none;
+  }
 }
 /**/
 /* CANVAS */
@@ -344,12 +345,12 @@ img {
     100% 100%,
     0 100%
   );
-}
-#card-trim-inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--clrEleTrimIdle);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--clrEleTrimIdle);
+  }
 }
 #card-content {
   flex-grow: 1;
@@ -366,9 +367,9 @@ img {
 #card-content input {
   all: unset;
   color: var(--clrTextMuted);
-}
-#card-content input::placeholder {
-  color: var(--clrTextMuted);
+  &::placeholder {
+    color: var(--clrTextMuted);
+  }
 }
 #markdown-raw {
   position: relative;
