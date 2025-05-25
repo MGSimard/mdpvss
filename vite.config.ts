@@ -1,7 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import viteReact from "@vitejs/plugin-react";
+import { resolve } from "node:path";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
+  plugins: [
+    viteReact({
+      babel: {
+        plugins: [["babel-plugin-react-compiler", { target: "19" }]],
+      },
+    }),
+    ,
+  ],
+});
