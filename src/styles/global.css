@@ -270,8 +270,15 @@ img {
 /* CANVAS */
 #canvas {
   width: 76.8rem;
+  background: var(--clrBg);
+  background-image: radial-gradient(
+    circle at center -50%,
+    oklch(from var(--clrPrimary) l c h / 0.4),
+    var(--clrBg) 100%
+  );
+  background-repeat: no-repeat;
   transition: padding 0.2s ease-in-out;
-  outline: 1px solid red;
+  border: 1px solid var(--clrEleBorderIdle);
 }
 #card {
   height: 100%;
