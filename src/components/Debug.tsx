@@ -1,7 +1,7 @@
 import { useSettingsStore } from "@/store/useSettingsStore";
 
 export function Debug() {
-  const { darkMode, padding, transparentBackground, lineNumbersVisible, previewRenderedMarkdown } = useSettingsStore();
+  const { darkMode, padding, visibleBackground, visibleLineNumbers, previewRenderedMarkdown } = useSettingsStore();
 
   return (
     <div>
@@ -9,8 +9,8 @@ export function Debug() {
       <ul>
         <li>Dark mode: {darkMode ? "true" : "false"}</li>
         <li>Padding: {padding}</li>
-        <li>Transparent background: {transparentBackground ? "true" : "false"}</li>
-        <li>Line numbers visible: {lineNumbersVisible ? "true" : "false"}</li>
+        <li>Visible background: {visibleBackground ? "true" : "false"}</li>
+        <li>Visible line numbers: {visibleLineNumbers ? "true" : "false"}</li>
         <li>Preview rendered markdown: {previewRenderedMarkdown ? "true" : "false"}</li>
       </ul>
     </div>

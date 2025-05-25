@@ -7,11 +7,11 @@ interface SettingsStore {
   darkMode: boolean;
   toggleDarkMode: () => void;
 
-  transparentBackground: boolean;
-  toggleTransparentBackground: () => void;
+  visibleBackground: boolean;
+  toggleVisibleBackground: () => void;
 
-  lineNumbersVisible: boolean;
-  toggleLineNumbersVisible: () => void;
+  visibleLineNumbers: boolean;
+  toggleVisibleLineNumbers: () => void;
 
   padding: PaddingValue;
   cyclePadding: () => void;
@@ -24,11 +24,11 @@ export const useSettingsStore = create<SettingsStore>((set) => ({
   darkMode: true,
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
-  transparentBackground: false,
-  toggleTransparentBackground: () => set((state) => ({ transparentBackground: !state.transparentBackground })),
+  visibleBackground: true,
+  toggleVisibleBackground: () => set((state) => ({ visibleBackground: !state.visibleBackground })),
 
-  lineNumbersVisible: false,
-  toggleLineNumbersVisible: () => set((state) => ({ lineNumbersVisible: !state.lineNumbersVisible })),
+  visibleLineNumbers: true,
+  toggleVisibleLineNumbers: () => set((state) => ({ visibleLineNumbers: !state.visibleLineNumbers })),
 
   padding: 64,
   cyclePadding: () =>

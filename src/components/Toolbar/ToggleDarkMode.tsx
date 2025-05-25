@@ -8,7 +8,7 @@ export function ToggleDarkMode() {
     <button
       type="button"
       className="setting"
-      aria-label="Toggle dark mode"
+      aria-label="Dark mode"
       aria-role="switch"
       aria-checked={darkMode}
       onClick={toggleDarkMode}>
