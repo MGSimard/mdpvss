@@ -20,7 +20,7 @@ interface SettingsStore {
   togglePreviewRenderedMarkdown: () => void;
 }
 
-export const useSettingsStore = create<SettingsStore>((set, get) => ({
+export const useSettingsStore = create<SettingsStore>((set) => ({
   darkMode: true,
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
@@ -31,12 +31,12 @@ export const useSettingsStore = create<SettingsStore>((set, get) => ({
   toggleLineNumbersVisible: () => set((state) => ({ lineNumbersVisible: !state.lineNumbersVisible })),
 
   padding: 64,
-  cyclePadding: () => {
-    const current = get().padding;
-    const idx = paddingValues.indexOf(current);
-    const next = paddingValues[idx + 1] ?? paddingValues[0];
-    set({ padding: next });
-  },
+  cyclePadding: () =>
+    set((state) => {
+      const idx = paddingValues.indexOf(state.padding);
+      const next = paddingValues[idx + 1] ?? paddingValues[0];
+      return { padding: next };
+    }),
 
   previewRenderedMarkdown: false,
   togglePreviewRenderedMarkdown: () => set((state) => ({ previewRenderedMarkdown: !state.previewRenderedMarkdown })),
