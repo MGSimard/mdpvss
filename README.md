@@ -6,8 +6,10 @@
 
 ## Task List
 
-- [ ] Look into gsap flip for morph recommended by jh3yy
+- [x] Look into gsap flip for morph recommended by jh3yy
 
+- [x] Toolbar, state store
+- [ ] Toolbar collapse later
 - [ ] Core layout
 - [ ] Resizeable canvas (width)
 - [ ] Draggable/Magnetic toolbar (collapsible too?)
