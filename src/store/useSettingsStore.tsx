@@ -18,6 +18,9 @@ interface SettingsStore {
 
   previewRenderedMarkdown: boolean;
   togglePreviewRenderedMarkdown: () => void;
+
+  width: number;
+  setWidth: (width: number) => void;
 }
 
 // Could be separate stores to localize re-renders but it's fine
@@ -41,4 +44,7 @@ export const useSettingsStore = create<SettingsStore>((set) => ({
 
   previewRenderedMarkdown: false,
   togglePreviewRenderedMarkdown: () => set((state) => ({ previewRenderedMarkdown: !state.previewRenderedMarkdown })),
+
+  width: 520,
+  setWidth: (width: number) => set({ width }),
 }));

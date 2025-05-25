@@ -10,6 +10,7 @@
 
   --clrHeading: var(--clrSecondary);
   --clrText: var(--clrPrimary);
+  --clrTextMuted: oklch(0.5208 0 0);
 
   /* DERIVATIVES */
   --clrEleBg: oklch(from var(--clrBg) l c h / 0.8);
@@ -32,7 +33,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 html {
   font-family: var(--coreFont);
@@ -269,4 +269,111 @@ img {
 /**/
 /* CANVAS */
 #canvas {
+  min-width: 52rem;
+  max-width: 92rem;
+  transition: padding 0.2s ease-in-out;
+  outline: 1px solid red;
+}
+#card {
+  height: 100%;
+  padding: 1px;
+  background-color: var(--clrEleBorderIdle);
+  clip-path: polygon(
+    0 0.6rem,
+    0.2rem 0.4rem,
+    1.6rem 0.4rem,
+    2rem 0,
+    100% 0,
+    100% calc(100% - 2rem),
+    calc(100% - 2rem) 100%,
+    1rem 100%,
+    0 calc(100% - 1rem)
+  );
+}
+#card-inner {
+  display: flex;
+  gap: 0.2rem;
+  height: 100%;
+  background-color: var(--clrBg);
+  clip-path: polygon(
+    0 0.6rem,
+    0.2rem 0.4rem,
+    1.6rem 0.4rem,
+    2rem 0,
+    100% 0,
+    100% calc(100% - 2rem),
+    calc(100% - 2rem) 100%,
+    1rem 100%,
+    0 calc(100% - 1rem)
+  );
+}
+#card-trim {
+  flex-shrink: 0;
+  width: 3rem;
+  background: var(--clrEleBorderIdle);
+  padding-right: 1px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 3rem,
+    calc(100% - 0.3rem) 3.3rem,
+    calc(100% - 0.3rem) calc(100% - 3rem),
+    100% calc(100% - 2.7rem),
+    100% 100%,
+    0 100%
+  );
+}
+#card-trim-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--clrBg);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 2.95rem,
+    calc(100% - 0.3rem) 3.25rem,
+    calc(100% - 0.3rem) calc(100% - 2.95rem),
+    100% calc(100% - 2.65rem),
+    100% 100%,
+    0 100%
+  );
+}
+#card-trim-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clrEleTrimIdle);
+}
+#card-content {
+  flex-grow: 1;
+  display: flex;
+  padding: 1.6rem;
+  border-left: 1px solid var(--clrEleBorderIdle);
+}
+#card-editable {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+#card-content input {
+  all: unset;
+  flex-shrink: 0;
+  display: block;
+  width: 100%;
+  line-height: 1em;
+  color: var(--clrTextMuted);
+}
+#card-content input::placeholder {
+  color: var(--clrTextMuted);
+}
+#card-content textarea {
+  all: unset;
+  flex-grow: 1;
+  display: block;
+  resize: none;
+}
+* {
+  outline: 1px solid red;
 }
