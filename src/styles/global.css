@@ -62,6 +62,9 @@ main {
 }
 /**/
 /* NORMALIZE*/
+button {
+  all: unset;
+}
 h1,
 h2,
 h3,
@@ -171,7 +174,7 @@ img {
   padding: 1.6rem;
   border-left: 1px solid var(--clrEleBorderIdle);
 }
-#toolbar label {
+.setting {
   position: relative;
   padding: 1px;
   font-weight: 500;
@@ -191,15 +194,16 @@ img {
     0 100%
   );
 }
-#toolbar label:hover,
-#toolbar label:has(input[type="checkbox"]:focus-visible) {
+.setting:hover,
+.setting:has(input[type="checkbox"]:focus-visible),
+button.setting:focus-visible {
   background: var(--clrEleBorderHover);
 }
-#toolbar label:active,
-#toolbar label:has(input[type="checkbox"]:active) {
+.setting:active,
+.setting:has(input[type="checkbox"]:active) {
   color: var(--clrBg);
 }
-#toolbar label span {
+.setting > span {
   display: block;
   padding: 0.8rem 3.5rem 0.4rem 4rem;
   background: var(--clrBg);
@@ -213,29 +217,47 @@ img {
     0 100%
   );
 }
-#toolbar label span::before {
+button.setting > span {
+  position: relative;
+}
+button.setting .padding-value {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.8rem;
+  font-size: 1.4rem;
+  color: var(--clrPrimary);
+  transition: color 0.2s ease-in-out;
+}
+.setting .padding-value.highlight {
+  color: var(--clrSecondary);
+  transition: none;
+}
+.setting > span::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: -1;
 }
-#toolbar label:hover span::before,
-#toolbar label:has(input[type="checkbox"]:focus-visible) span::before {
+.setting:hover > span::before,
+.setting:has(input[type="checkbox"]:focus-visible) > span::before,
+button.setting:focus-visible > span::before {
   content: "";
   position: absolute;
   inset: 0;
   background: var(--clrEleOverlayHover);
   z-index: -1;
 }
-#toolbar label:has(input[type="checkbox"]:checked) span::before {
+.setting:has(input[type="checkbox"]:checked) > span::before,
+button.setting:checked > span::before {
   background: var(--clrEleOverlayEnabled);
 }
-#toolbar label:active span::before,
-#toolbar label:has(input[type="checkbox"]:active) span::before {
+.setting:active > span::before,
+.setting:has(input[type="checkbox"]:active) > span::before,
+button.setting:active > span::before {
   background: var(--clrEleOverlayClicked);
 }
-#toolbar label svg {
+.setting svg {
   position: absolute;
   top: 50%;
   left: 0.8rem;
@@ -243,7 +265,7 @@ img {
   width: 2rem;
   transform: translateY(-50%);
 }
-#toolbar input[type="checkbox"] {
+.setting input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   width: 1px;

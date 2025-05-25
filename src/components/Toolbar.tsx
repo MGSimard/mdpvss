@@ -5,6 +5,7 @@ import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { IconArrowsOut, IconBolt, IconEye, IconNumberedLines, IconTransparent } from "@/components/Icons";
+import { TogglePadding } from "./TogglePadding";
 
 gsap.registerPlugin(useGSAP, Draggable, Flip, InertiaPlugin);
 
@@ -35,30 +36,29 @@ export function Toolbar() {
           <ToggleButton
             label="DARK"
             icon={<IconBolt aria-hidden="true" />}
+            aria-label="Toggle dark mode"
             defaultChecked={true}
             onChange={handleChange}
           />
           <ToggleButton
             label="BACKGROUND"
             icon={<IconTransparent aria-hidden="true" />}
+            aria-label="Toggle background transparency"
             defaultChecked={false}
             onChange={handleChange}
           />
           <ToggleButton
             label="LINE NUMBERS"
             icon={<IconNumberedLines aria-hidden="true" />}
+            aria-label="Toggle line numbers"
             defaultChecked={true}
             onChange={handleChange}
           />
-          <ToggleButton
-            label="PADDING"
-            icon={<IconArrowsOut aria-hidden="true" />}
-            defaultChecked={false}
-            onChange={handleChange}
-          />
+          <TogglePadding />
           <ToggleButton
             label="PREVIEW"
             icon={<IconEye aria-hidden="true" />}
+            aria-label="Toggle rendered markdown"
             defaultChecked={false}
             onChange={handleChange}
           />
@@ -68,23 +68,18 @@ export function Toolbar() {
   );
 }
 
-function ToggleButton({
-  label,
-  icon,
-  defaultChecked,
-  onChange,
-}: {
+interface ToggleButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   icon: React.ReactNode;
-  defaultChecked: boolean;
-  onChange: () => void;
-}) {
+}
+
+function ToggleButton({ label, icon, ...props }: ToggleButtonProps) {
   return (
-    <label>
+    <label className="setting">
       <span>
         {icon} {label}
       </span>
-      <input type="checkbox" defaultChecked={defaultChecked} onChange={onChange} />
+      <input type="checkbox" {...props} />
     </label>
   );
 }
