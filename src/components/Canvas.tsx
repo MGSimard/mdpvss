@@ -1,3 +1,3 @@
 export function Canvas() {
-  return <div>Canvas</div>;
+  return <div id="canvas">Canvas</div>;
 }

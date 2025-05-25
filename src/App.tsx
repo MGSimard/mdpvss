@@ -1,5 +1,6 @@
 import { Toolbar } from "@/components/Toolbar/Toolbar";
-import { Debug } from "./components/Debug";
+import { Canvas } from "@/components/Canvas";
+import { Debug } from "@/components/Debug";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       </header>
       <main>
         <Toolbar />
-        <Debug />
+        <Canvas />
+        {/* <Debug /> */}
       </main>
     </>
   );
