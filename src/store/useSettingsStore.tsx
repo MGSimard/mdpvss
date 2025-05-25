@@ -3,32 +3,32 @@ import { create } from "zustand";
 const paddingValues = [16, 32, 64, 128] as const;
 type PaddingValue = (typeof paddingValues)[number];
 
-interface SettingsState {
+interface SettingsStore {
   darkMode: boolean;
-  toggleDarkMode: (value: boolean) => void;
+  toggleDarkMode: () => void;
 
   transparentBackground: boolean;
-  setTransparentBackground: (value: boolean) => void;
+  toggleTransparentBackground: () => void;
 
   lineNumbersVisible: boolean;
-  setLineNumbersVisible: (value: boolean) => void;
+  toggleLineNumbersVisible: () => void;
 
   padding: PaddingValue;
   cyclePadding: () => void;
 
   previewRenderedMarkdown: boolean;
-  setPreviewRenderedMarkdown: (value: boolean) => void;
+  togglePreviewRenderedMarkdown: () => void;
 }
 
-export const useSettingsStore = create<SettingsState>((set, get) => ({
+export const useSettingsStore = create<SettingsStore>((set, get) => ({
   darkMode: true,
-  toggleDarkMode: (value) => set({ darkMode: value }),
+  toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
 
   transparentBackground: false,
-  setTransparentBackground: (value) => set({ transparentBackground: value }),
+  toggleTransparentBackground: () => set((state) => ({ transparentBackground: !state.transparentBackground })),
 
   lineNumbersVisible: false,
-  setLineNumbersVisible: (value) => set({ lineNumbersVisible: value }),
+  toggleLineNumbersVisible: () => set((state) => ({ lineNumbersVisible: !state.lineNumbersVisible })),
 
   padding: 64,
   cyclePadding: () => {
@@ -39,5 +39,5 @@ export const useSettingsStore = create<SettingsState>((set, get) => ({
   },
 
   previewRenderedMarkdown: false,
-  setPreviewRenderedMarkdown: (value) => set({ previewRenderedMarkdown: value }),
+  togglePreviewRenderedMarkdown: () => set((state) => ({ previewRenderedMarkdown: !state.previewRenderedMarkdown })),
 }));
