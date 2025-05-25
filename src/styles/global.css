@@ -19,6 +19,9 @@
   --clrEleBorderEnabled: var(--clrPrimary);
   --clrEleBorderClicked: var(--clrPrimary);
 
+  --clrEleTrimIdle: oklch(from var(--clrPrimary) l c h / 0.1);
+  --clrEleTrimHover: oklch(from var(--clrPrimary) l c h / 0.4);
+
   --clrEleOverlayHover: oklch(from var(--clrPrimary) l c h / 0.1);
   --clrEleOverlayEnabled: oklch(from var(--clrPrimary) l c h / 0.4);
   --clrEleOverlayClicked: oklch(from var(--clrPrimary) l c h / 0.7);
@@ -61,25 +64,100 @@ img {
 /* TOOLBAR */
 #toolbar {
   position: fixed;
-  top: 0;
-  left: 50%;
+  top: 50%;
+  left: 1rem;
+  width: fit-content;
+  padding: 1px;
+  background-color: var(--clrEleBorderIdle);
+  transform: translateY(-50%);
+  z-index: 1000;
+  clip-path: polygon(
+    0 0.6rem,
+    0.2rem 0.4rem,
+    1.6rem 0.4rem,
+    2rem 0,
+    100% 0,
+    100% calc(100% - 2rem),
+    calc(100% - 2rem) 100%,
+    1rem 100%,
+    0 calc(100% - 1rem)
+  );
+}
+#toolbar:hover,
+#toolbar:has(:focus-visible) {
+  background-color: var(--clrEleBorderHover);
+}
+#toolbar-inner {
+  display: flex;
+  gap: 0.2rem;
+  background-color: var(--clrBg);
+  clip-path: polygon(
+    0 0.6rem,
+    0.2rem 0.4rem,
+    1.6rem 0.4rem,
+    2rem 0,
+    100% 0,
+    100% calc(100% - 2rem),
+    calc(100% - 2rem) 100%,
+    1rem 100%,
+    0 calc(100% - 1rem)
+  );
+}
+#toolbar-left {
+  flex-shrink: 0;
+  width: 3rem;
+  background: var(--clrEleBorderIdle);
+  padding-right: 1px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 3rem,
+    calc(100% - 0.3rem) 3.3rem,
+    calc(100% - 0.3rem) calc(100% - 3rem),
+    100% calc(100% - 2.7rem),
+    100% 100%,
+    0 100%
+  );
+}
+#toolbar-left-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--clrBg);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 2.95rem,
+    calc(100% - 0.3rem) 3.25rem,
+    calc(100% - 0.3rem) calc(100% - 2.95rem),
+    100% calc(100% - 2.65rem),
+    100% 100%,
+    0 100%
+  );
+}
+#toolbar-left-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clrEleTrimIdle);
+}
+#toolbar:hover #toolbar-left-inner::before,
+#toolbar:has(:focus-visible) #toolbar-left-inner::before {
+  background: var(--clrEleTrimHover);
+}
+#toolbar-right {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  width: fit-content;
   padding: 1.6rem;
-
-  border-radius: 1.6rem;
-  transform: translateX(-50%);
-  z-index: 1000;
-  outline: 1px solid red;
+  border-left: 1px solid var(--clrEleBorderIdle);
 }
 #toolbar label {
   position: relative;
   padding: 1px;
-  text-align: center;
   font-weight: 500;
   line-height: 1;
+  text-align: center;
   color: var(--clrPrimary);
   text-transform: uppercase;
   background: var(--clrEleBorderIdle);
@@ -94,16 +172,34 @@ img {
     0 100%
   );
 }
+#toolbar label:hover,
+#toolbar label:has(input[type="checkbox"]:focus-visible) {
+  background: var(--clrEleBorderHover);
+}
+#toolbar label:active,
+#toolbar label:has(input[type="checkbox"]:active) {
+  color: var(--clrBg);
+}
+#toolbar label span {
+  display: block;
+  padding: 0.8rem 3.5rem 0.4rem 4rem;
+  background: var(--clrBg);
+  clip-path: polygon(
+    0 0,
+    2.25rem 0,
+    2.45rem 0.2rem,
+    100% 0.2rem,
+    100% calc(100% - 0.35rem),
+    calc(100% - 0.35rem) 100%,
+    0 100%
+  );
+}
 #toolbar label span::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: -1;
-}
-#toolbar label:hover,
-#toolbar label:has(input[type="checkbox"]:focus-visible) {
-  background: var(--clrEleBorderHover);
 }
 #toolbar label:hover span::before,
 #toolbar label:has(input[type="checkbox"]:focus-visible) span::before {
@@ -116,27 +212,9 @@ img {
 #toolbar label:has(input[type="checkbox"]:checked) span::before {
   background: var(--clrEleOverlayEnabled);
 }
-#toolbar label:active,
-#toolbar label:has(input[type="checkbox"]:active) {
-  color: var(--clrBg);
-}
 #toolbar label:active span::before,
 #toolbar label:has(input[type="checkbox"]:active) span::before {
   background: var(--clrEleOverlayClicked);
-}
-#toolbar label span {
-  display: block;
-  padding: 0.8rem 3.5rem 0.2rem 4rem;
-  background: var(--clrBg);
-  clip-path: polygon(
-    0 0,
-    2.3rem 0,
-    2.5rem 0.2rem,
-    100% 0.2rem,
-    100% calc(100% - 0.35rem),
-    calc(100% - 0.35rem) 100%,
-    0 100%
-  );
 }
 #toolbar label svg {
   position: absolute;

@@ -27,36 +27,43 @@ export function Toolbar() {
 
   return (
     <div id="toolbar" ref={toolbarRef}>
-      <ToggleButton
-        label="DARK"
-        icon={<IconBolt aria-hidden="true" />}
-        defaultChecked={false}
-        onChange={handleChange}
-      />
-      <ToggleButton
-        label="BACKGROUND"
-        icon={<IconTransparent aria-hidden="true" />}
-        defaultChecked={false}
-        onChange={handleChange}
-      />
-      <ToggleButton
-        label="LINE NUMBERS"
-        icon={<IconNumberedLines aria-hidden="true" />}
-        defaultChecked={false}
-        onChange={handleChange}
-      />
-      <ToggleButton
-        label="PADDING"
-        icon={<IconArrowsOut aria-hidden="true" />}
-        defaultChecked={false}
-        onChange={handleChange}
-      />
-      <ToggleButton
-        label="PREVIEW"
-        icon={<IconEye aria-hidden="true" />}
-        defaultChecked={false}
-        onChange={handleChange}
-      />
+      <div id="toolbar-inner">
+        <div id="toolbar-left">
+          <div id="toolbar-left-inner"></div>
+        </div>
+        <div id="toolbar-right">
+          <ToggleButton
+            label="DARK"
+            icon={<IconBolt aria-hidden="true" />}
+            defaultChecked={false}
+            onChange={handleChange}
+          />
+          <ToggleButton
+            label="BACKGROUND"
+            icon={<IconTransparent aria-hidden="true" />}
+            defaultChecked={false}
+            onChange={handleChange}
+          />
+          <ToggleButton
+            label="LINE NUMBERS"
+            icon={<IconNumberedLines aria-hidden="true" />}
+            defaultChecked={false}
+            onChange={handleChange}
+          />
+          <ToggleButton
+            label="PADDING"
+            icon={<IconArrowsOut aria-hidden="true" />}
+            defaultChecked={false}
+            onChange={handleChange}
+          />
+          <ToggleButton
+            label="PREVIEW"
+            icon={<IconEye aria-hidden="true" />}
+            defaultChecked={false}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
     </div>
   );
 }
