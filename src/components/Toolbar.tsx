@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
+import { IconArrowsOut, IconBolt, IconEye, IconNumberedLines, IconTransparent } from "@/components/Icons";
 
 gsap.registerPlugin(useGSAP, Draggable, Flip, InertiaPlugin);
 
@@ -12,9 +13,7 @@ export function Toolbar() {
 
   useGSAP(() => {
     if (!toolbarRef.current) return;
-
     let draggableInstance: Draggable[] | undefined;
-
     draggableInstance = Draggable.create(toolbarRef.current, {
       type: "x,y",
       bounds: window,
@@ -22,28 +21,63 @@ export function Toolbar() {
     });
   });
 
+  const handleChange = () => {
+    console.log("handleChange");
+  };
+
   return (
     <div id="toolbar" ref={toolbarRef}>
-      <label>
-        <span>Dark mode</span>
-        <input type="checkbox" />
-      </label>
-      <label>
-        <span>Transparent</span>
-        <input type="checkbox" />
-      </label>
-      <label>
-        <span>Line numbers</span>
-        <input type="checkbox" />
-      </label>
-      <label>
-        <span>Padding</span>
-        <input type="checkbox" />
-      </label>
-      <label>
-        <span>Preview</span>
-        <input type="checkbox" />
-      </label>
+      <ToggleButton
+        label="DARK"
+        icon={<IconBolt aria-hidden="true" />}
+        defaultChecked={false}
+        onChange={handleChange}
+      />
+      <ToggleButton
+        label="BACKGROUND"
+        icon={<IconTransparent aria-hidden="true" />}
+        defaultChecked={false}
+        onChange={handleChange}
+      />
+      <ToggleButton
+        label="LINE NUMBERS"
+        icon={<IconNumberedLines aria-hidden="true" />}
+        defaultChecked={false}
+        onChange={handleChange}
+      />
+      <ToggleButton
+        label="PADDING"
+        icon={<IconArrowsOut aria-hidden="true" />}
+        defaultChecked={false}
+        onChange={handleChange}
+      />
+      <ToggleButton
+        label="PREVIEW"
+        icon={<IconEye aria-hidden="true" />}
+        defaultChecked={false}
+        onChange={handleChange}
+      />
     </div>
+  );
+}
+
+function ToggleButton({
+  label,
+  icon,
+  defaultChecked,
+  onChange,
+}: {
+  label: string;
+  icon: React.ReactNode;
+  defaultChecked: boolean;
+  onChange: () => void;
+}) {
+  return (
+    <label>
+      <span>
+        {icon} {label}
+      </span>
+      <input type="checkbox" defaultChecked={defaultChecked} onChange={onChange} />
+    </label>
   );
 }
