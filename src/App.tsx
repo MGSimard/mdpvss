@@ -2,11 +2,14 @@ import { Toolbar } from "@/components/Toolbar";
 
 function App() {
   return (
-    <main>
-      <h1>Hello World</h1>
-      <p>test</p>
-      <Toolbar />
-    </main>
+    <>
+      <header>
+        <h1>// MDPVSS</h1>
+      </header>
+      <main>
+        <Toolbar />
+      </main>
+    </>
   );
 }
 

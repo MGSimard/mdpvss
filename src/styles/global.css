@@ -37,7 +37,7 @@ html {
   font-family: var(--coreFont);
   font-size: 62.5%;
   color: var(--clrText);
-  background-color: black;
+  background-color: var(--clrBg);
 }
 body {
   font-size: 1.6rem;
@@ -46,12 +46,31 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+  padding: 0 1.6rem;
+}
+header,
+main {
+  padding: 1.6rem 0;
+}
+header {
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.3;
 }
 main {
   flex-grow: 1;
 }
 /**/
 /* NORMALIZE*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--coreFont);
+  font-weight: 500;
+}
 a {
   color: inherit;
   text-decoration: none;

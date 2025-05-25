@@ -35,7 +35,7 @@ export function Toolbar() {
           <ToggleButton
             label="DARK"
             icon={<IconBolt aria-hidden="true" />}
-            defaultChecked={false}
+            defaultChecked={true}
             onChange={handleChange}
           />
           <ToggleButton
@@ -47,7 +47,7 @@ export function Toolbar() {
           <ToggleButton
             label="LINE NUMBERS"
             icon={<IconNumberedLines aria-hidden="true" />}
-            defaultChecked={false}
+            defaultChecked={true}
             onChange={handleChange}
           />
           <ToggleButton
