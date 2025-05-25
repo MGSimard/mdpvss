@@ -195,15 +195,17 @@ img {
   );
 }
 .setting:hover,
-.setting:has(input[type="checkbox"]:focus-visible),
-button.setting:focus-visible {
+.setting:focus-visible {
   background: var(--clrEleBorderHover);
 }
-.setting:active,
-.setting:has(input[type="checkbox"]:active) {
+.setting:active {
   color: var(--clrBg);
 }
+.setting[aria-checked="true"] {
+  background: var(--clrEleBorderEnabled);
+}
 .setting > span {
+  position: relative;
   display: block;
   padding: 0.8rem 3.5rem 0.4rem 4rem;
   background: var(--clrBg);
@@ -217,10 +219,36 @@ button.setting:focus-visible {
     0 100%
   );
 }
-button.setting > span {
-  position: relative;
+.setting > span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
 }
-button.setting .padding-value {
+.setting:hover > span::before,
+.setting:focus-visible > span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clrEleOverlayHover);
+  z-index: -1;
+}
+.setting:active > span::before {
+  background: var(--clrEleOverlayClicked);
+}
+.setting[aria-checked="true"] > span::before {
+  background: var(--clrEleOverlayEnabled);
+}
+.setting svg {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  height: 2rem;
+  width: 2rem;
+  transform: translateY(-50%);
+}
+.setting .padding-value {
   position: absolute;
   bottom: 0.4rem;
   right: 0.8rem;
@@ -231,43 +259,4 @@ button.setting .padding-value {
 .setting .padding-value.highlight {
   color: var(--clrSecondary);
   transition: none;
-}
-.setting > span::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-.setting:hover > span::before,
-.setting:has(input[type="checkbox"]:focus-visible) > span::before,
-button.setting:focus-visible > span::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--clrEleOverlayHover);
-  z-index: -1;
-}
-.setting:has(input[type="checkbox"]:checked) > span::before,
-button.setting:checked > span::before {
-  background: var(--clrEleOverlayEnabled);
-}
-.setting:active > span::before,
-.setting:has(input[type="checkbox"]:active) > span::before,
-button.setting:active > span::before {
-  background: var(--clrEleOverlayClicked);
-}
-.setting svg {
-  position: absolute;
-  top: 50%;
-  left: 0.8rem;
-  height: 2rem;
-  width: 2rem;
-  transform: translateY(-50%);
-}
-.setting input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
 }

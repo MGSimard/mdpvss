@@ -1,11 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { IconArrowsOut } from "@/components/Icons";
+import { useSettingsStore } from "@/store/useSettingsStore";
 
-export function TogglePadding() {
-  // Move this stuff into a context later
-  const paddingValues = [16, 32, 64, 128] as const;
-  type PaddingValue = (typeof paddingValues)[number];
-  const [padding, setPadding] = useState<PaddingValue>(64);
+export function CyclePadding() {
+  const { padding, cyclePadding } = useSettingsStore();
   const [highlight, setHighlight] = useState(false);
   const timeoutRef = useRef<number | null>(null);
 
@@ -16,8 +14,7 @@ export function TogglePadding() {
   }, []);
 
   const handleClick = () => {
-    const nextPadding = paddingValues[paddingValues.indexOf(padding) + 1] ?? paddingValues[0];
-    setPadding(nextPadding);
+    cyclePadding();
     setHighlight(true);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = window.setTimeout(() => {
@@ -26,16 +23,10 @@ export function TogglePadding() {
   };
 
   return (
-    <button
-      type="button"
-      className="setting"
-      onClick={handleClick}
-      aria-label={`Change padding (current: ${padding}px)`}>
+    <button type="button" className="setting" onClick={handleClick}>
       <span>
         <IconArrowsOut aria-hidden="true" /> PADDING{" "}
-        <span className={`padding-value${highlight ? " highlight" : ""}`} aria-live="polite">
-          {padding}
-        </span>
+        <span className={`padding-value${highlight ? " highlight" : ""}`}>{padding}</span>
       </span>
     </button>
   );
