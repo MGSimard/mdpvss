@@ -16,8 +16,9 @@
 - [ ] Background toggle (Transparent)
 - [ ] Dark/Light mode
 - [ ] Show/Hide line numbers
-- [ ] Padding [16/32/64/128]
+- [x] Padding [16/32/64/128]
 - [ ] Preview Toggle (MD)
+- [ ] Need to find a good monospace font
 
 - [ ] Format Code button
 - [ ] Export as [PNG/SVG]

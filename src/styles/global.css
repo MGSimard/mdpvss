@@ -10,7 +10,7 @@
 
   --clrHeading: var(--clrSecondary);
   --clrText: var(--clrPrimary);
-  --clrTextMuted: oklch(0.5208 0 0);
+  --clrTextMuted: oklch(0.4701 0.0112 285.96);
 
   /* DERIVATIVES */
   --clrEleBg: oklch(from var(--clrBg) l c h / 0.8);
@@ -269,8 +269,7 @@ img {
 /**/
 /* CANVAS */
 #canvas {
-  min-width: 52rem;
-  max-width: 92rem;
+  width: 76.8rem;
   transition: padding 0.2s ease-in-out;
   outline: 1px solid red;
 }
@@ -364,13 +363,41 @@ img {
 #card-content input::placeholder {
   color: var(--clrTextMuted);
 }
+#markdown-raw {
+  position: relative;
+}
+.markdown-raw-highlighted {
+  pointer-events: none;
+}
 #card-content textarea {
   all: unset;
   resize: none;
-  overflow: hidden;
-  /* color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
   -webkit-text-fill-color: transparent;
-  text-size-adjust: none; */
+  text-size-adjust: none;
+  caret-color: var(--clrText);
+}
+#card-content textarea,
+.markdown-raw-highlighted {
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
+  font-family: monospace;
+  font-size: 1.6rem;
+}
+#card-content textarea,
+.markdown-raw-highlighted,
+pre,
+code,
+.line,
+.line span {
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  overflow: hidden;
 }
 * {
   outline: 1px solid red;
