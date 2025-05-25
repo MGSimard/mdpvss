@@ -9,7 +9,7 @@ export function ToggleDarkMode() {
       type="button"
       className="setting"
       aria-label="Dark mode"
-      aria-role="switch"
+      role="switch"
       aria-checked={darkMode}
       onClick={toggleDarkMode}>
       <span>

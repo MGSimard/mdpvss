@@ -8,7 +8,7 @@ export function ToggleBackground() {
     <button
       type="button"
       className="setting"
-      aria-role="switch"
+      role="switch"
       aria-label="Background visibility"
       aria-checked={visibleBackground}
       onClick={toggleVisibleBackground}>

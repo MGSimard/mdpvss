@@ -8,7 +8,7 @@ export function TogglePreview() {
     <button
       type="button"
       className="setting"
-      aria-role="switch"
+      role="switch"
       aria-label="Preview rendered markdown"
       aria-checked={previewRenderedMarkdown}
       onClick={togglePreviewRenderedMarkdown}>

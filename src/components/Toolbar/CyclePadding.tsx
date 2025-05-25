@@ -26,7 +26,9 @@ export function CyclePadding() {
     <button type="button" className="setting" aria-label="Padding" onClick={handleClick}>
       <span>
         <IconArrowsOut aria-hidden="true" /> PADDING{" "}
-        <span className={`padding-value${highlight ? " highlight" : ""}`}>{padding}</span>
+        <span className={`padding-value${highlight ? " highlight" : ""}`} aria-live="polite">
+          {padding}
+        </span>
       </span>
     </button>
   );

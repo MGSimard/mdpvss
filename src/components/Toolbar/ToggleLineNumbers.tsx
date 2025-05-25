@@ -9,7 +9,7 @@ export function ToggleLineNumbers() {
       type="button"
       className="setting"
       aria-label="Line numbers"
-      aria-role="switch"
+      role="switch"
       aria-checked={visibleLineNumbers}
       onClick={toggleVisibleLineNumbers}>
       <span>
