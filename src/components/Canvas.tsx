@@ -1,4 +1,5 @@
 import { useSettingsStore } from "@/store/useSettingsStore";
+import { Markdown } from "@/components/Markdown";
 
 export function Canvas() {
   const { padding, visibleLineNumbers } = useSettingsStore();
@@ -11,7 +12,7 @@ export function Canvas() {
             <div id="card-trim-inner"></div>
           </div>
           <div id="card-content">
-            <div id="line-numbers">{/* handle this later */}</div>
+            {/* <div id="line-numbers">handle this later</div> */}
             <div id="card-editable">
               <input
                 placeholder="PLACEHOLDER.MD"
@@ -22,13 +23,7 @@ export function Canvas() {
                 autoComplete="off"
                 spellCheck={false}
               />
-              <textarea
-                rows={1}
-                autoFocus
-                autoCorrect="off"
-                autoCapitalize="off"
-                autoComplete="off"
-                spellCheck={false}></textarea>
+              <Markdown />
             </div>
           </div>
         </div>

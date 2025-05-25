@@ -359,10 +359,6 @@ img {
 }
 #card-content input {
   all: unset;
-  flex-shrink: 0;
-  display: block;
-  width: 100%;
-  line-height: 1em;
   color: var(--clrTextMuted);
 }
 #card-content input::placeholder {
@@ -370,9 +366,11 @@ img {
 }
 #card-content textarea {
   all: unset;
-  flex-grow: 1;
-  display: block;
   resize: none;
+  overflow: hidden;
+  /* color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-size-adjust: none; */
 }
 * {
   outline: 1px solid red;
