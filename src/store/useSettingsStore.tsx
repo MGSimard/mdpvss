@@ -20,6 +20,7 @@ interface SettingsStore {
   togglePreviewRenderedMarkdown: () => void;
 }
 
+// Could be separate stores to localize re-renders but it's fine
 export const useSettingsStore = create<SettingsStore>((set) => ({
   darkMode: true,
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
