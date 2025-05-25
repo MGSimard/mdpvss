@@ -11,7 +11,6 @@
 - [ ] Core layout
 - [ ] Resizeable canvas (width)
 - [ ] Draggable/Magnetic toolbar (collapsible too?)
-- [ ] Theme
 - [ ] Background toggle (Transparent)
 - [ ] Dark/Light mode
 - [ ] Show/Hide line numbers

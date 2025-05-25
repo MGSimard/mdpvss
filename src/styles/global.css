@@ -3,9 +3,25 @@
     Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   --secondaryFont: "Orbitron", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
-  --clrPrimary: oklch(0.6532 0.2202 25.76);
-  --clrText: oklch(1 0 0);
-  --clrMuted: oklch(0.5 0 0);
+  /* DARK FALLBACK */
+  --clrPrimary: oklch(0.6565 0.2298 24.01);
+  --clrSecondary: oklch(0.8965 0.1273 200.71);
+  --clrBg: oklch(0.1685 0.0187 284.21);
+
+  --clrHeading: var(--clrSecondary);
+  --clrText: var(--clrPrimary);
+
+  /* DERIVATIVES */
+  --clrEleBg: oklch(from var(--clrBg) l c h / 0.8);
+
+  --clrEleBorderIdle: oklch(from var(--clrPrimary) l c h / 0.3);
+  --clrEleBorderHover: var(--clrPrimary);
+  --clrEleBorderActive: var(--clrPrimary);
+  --clrEleBorderClicked: var(--clrPrimary);
+
+  --clrEleOverlayHover: oklch(from var(--clrPrimary) l c h / 0.1);
+  --clrEleOverlayActive: oklch(from var(--clrPrimary) l c h / 0.4);
+  --clrEleOverlayClicked: oklch(from var(--clrPrimary) l c h / 0.7);
 }
 
 /* CORE */

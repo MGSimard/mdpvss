@@ -25,20 +25,11 @@ export function Toolbar() {
   return (
     <div id="toolbar" ref={toolbarRef}>
       <label>
-        <span>Theme</span>
-        <button type="button"></button>
-        <div className="dropdown" popover="">
-          <button type="button">Temp 1</button>
-          <button type="button">Temp 2</button>
-          <button type="button">Temp 3</button>
-        </div>
-      </label>
-      <label>
-        <span>Transparent</span>
+        <span>Dark mode</span>
         <input type="checkbox" />
       </label>
       <label>
-        <span>Dark mode</span>
+        <span>Transparent</span>
         <input type="checkbox" />
       </label>
       <label>
