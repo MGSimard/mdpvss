@@ -1,8 +1,12 @@
+import { Canvas } from "@/components/Canvas";
+import { Toolbar } from "@/components/Toolbar";
+
 function App() {
   return (
-    <div>
+    <main>
       <h1>Hello World</h1>
-    </div>
+      <Toolbar />
+    </main>
   );
 }
 
