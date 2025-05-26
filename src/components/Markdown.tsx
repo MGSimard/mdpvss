@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import ShikiHighlighter, { rehypeInlineCodeProperty } from "react-shiki";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { myTheme } from "@/utils/2077";
 
 export function Markdown() {
@@ -12,6 +13,7 @@ export function Markdown() {
   return previewRenderedMarkdown ? (
     <div id="markdown-rendered">
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeInlineCodeProperty]}
         components={{
           code: CodeHighlight,

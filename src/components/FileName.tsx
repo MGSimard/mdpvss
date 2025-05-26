@@ -1,6 +1,7 @@
 export function FileName() {
   return (
     <input
+      id="file-name"
       placeholder="PLACEHOLDER.MD"
       type="text"
       autoFocus

@@ -102,6 +102,9 @@ ul,
 ol {
   list-style-position: inside;
 }
+li input[type="checkbox"] {
+  vertical-align: middle;
+}
 /**/
 /* HELPERS */
 .sr-only {
@@ -514,7 +517,7 @@ ol {
   flex-direction: column;
   gap: 1.6rem;
 }
-#card-content input {
+#file-name {
   all: unset;
   color: var(--clrTextMuted);
   &::placeholder {
