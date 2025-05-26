@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
-import { Flip } from "gsap/Flip";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { CyclePadding } from "./CyclePadding";
 import { ToggleTheme } from "./ToggleTheme";
@@ -11,7 +10,7 @@ import { ToggleLineNumbers } from "./ToggleLineNumbers";
 import { TogglePreview } from "./TogglePreview";
 import { IconEllipsis, IconMinus } from "@/components/Icons";
 
-gsap.registerPlugin(useGSAP, Draggable, Flip, InertiaPlugin);
+gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin);
 
 export function Toolbar() {
   const [isOpen, setIsOpen] = useState(true);

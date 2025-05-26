@@ -1,24 +1,11 @@
 # MDPVSS
 
-- [x] Take a break for a sec do this quick markdown thing
-- [ ] Ray.so doesn't have a preview mode for markdown screenshots and I wanted one
-- [ ] Same functionalities just for markdown, also toggle line number column
-
 ## Task List
 
-- [x] Look into gsap flip for morph recommended by jh3yy
-
-- [x] Toolbar, state store
-- [ ] Toolbar collapse later
-- [ ] Core layout
-- [ ] Resizeable canvas (width)
-- [ ] Draggable/Magnetic toolbar (collapsible too?)
-- [ ] Background toggle (Transparent)
-- [ ] Dark/Light mode
+- [ ] Give magnetic points to toolbar drag
 - [ ] Show/Hide line numbers
-- [x] Padding [16/32/64/128]
-- [ ] Preview Toggle (MD)
 - [ ] Need to find a good monospace font
+- [ ] Finish up both custom shiki theme & css
 
 - [ ] Format Code button
 - [ ] Export as [PNG/SVG]
