@@ -407,14 +407,13 @@ img {
 #canvas {
   width: 100%;
   background: var(--clrBg);
-  background-image: radial-gradient(
-    circle at center -50%,
-    oklch(from var(--clrPrimary) l c h / 0.2),
-    var(--clrBg) 100%
-  );
+  background: radial-gradient(circle at center -50%, oklch(from var(--clrPrimary) l c h / 0.2), var(--clrBg) 100%);
   background-repeat: no-repeat;
   transition: padding 0.2s ease-in-out;
   border: 1px solid var(--clrEleBorderIdle);
+  &.bg-transparent {
+    background: transparent;
+  }
 }
 #card {
   height: 100%;
