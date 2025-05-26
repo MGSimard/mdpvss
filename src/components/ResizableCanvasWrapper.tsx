@@ -1,15 +1,19 @@
 import { useRef, useState, useEffect } from "react";
 
-const MIN_WIDTH = 325;
+const MIN_WIDTH = 285;
 const MAX_WIDTH = 1440;
-const WIDTH_DISPLAY_TIMEOUT = 600; // ms
+const WIDTH_DISPLAY_TIMEOUT = 600;
 
 function clampWidth(width: number) {
   return Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, width));
 }
 
+const getInitialWidth = () => {
+  return clampWidth(Math.min(720, window.innerWidth - 20));
+};
+
 export function ResizableCanvasWrapper({ children }: { children: React.ReactNode }) {
-  const [width, setWidth] = useState<number>(clampWidth(720));
+  const [width, setWidth] = useState<number>(() => getInitialWidth());
   const [showWidth, setShowWidth] = useState(false);
   const hideWidthTimer = useRef<number | null>(null);
   const dragging = useRef<"left" | "right" | null>(null);
@@ -67,7 +71,15 @@ export function ResizableCanvasWrapper({ children }: { children: React.ReactNode
     };
   }, []);
 
-  // Keyboard resize handler helpers
+  useEffect(() => {
+    const handleResize = () => {
+      const maxAllowed = clampWidth(Math.min(720, window.innerWidth - 20));
+      setWidth((w) => clampWidth(Math.min(w, maxAllowed)));
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleKeyDown = (side: "left" | "right") => (e: React.KeyboardEvent) => {
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       setWidth((w) => {
