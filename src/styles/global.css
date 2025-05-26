@@ -417,6 +417,18 @@ img {
     inset: 0;
     background: var(--clrEleTrimIdle);
   }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1rem;
+    height: 0.2rem;
+    border-top: 1px solid var(--clrEleBorderIdle);
+    border-right: 1px solid var(--clrEleBorderIdle);
+    border-bottom: 1px solid var(--clrEleBorderIdle);
+    transform: translateY(-50%);
+  }
 }
 #card-content {
   flex-grow: 1;
