@@ -10,13 +10,15 @@ export function Markdown() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   return previewRenderedMarkdown ? (
-    <ReactMarkdown
-      rehypePlugins={[rehypeInlineCodeProperty]}
-      components={{
-        code: CodeHighlight,
-      }}>
-      {textareaContent}
-    </ReactMarkdown>
+    <div id="markdown-rendered">
+      <ReactMarkdown
+        rehypePlugins={[rehypeInlineCodeProperty]}
+        components={{
+          code: CodeHighlight,
+        }}>
+        {textareaContent}
+      </ReactMarkdown>
+    </div>
   ) : (
     <div id="markdown-raw">
       <textarea
