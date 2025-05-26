@@ -5,13 +5,13 @@ export const myTheme: Theme = {
   type: "dark",
   colors: {
     "editor.background": "none",
-    "editor.foreground": "oklch(1 0 0)",
+    "editor.foreground": "oklch(0.6565 0.2298 24.01)",
   },
   tokenColors: [
     {
       scope: ["comment", "punctuation.definition.comment", "string.comment"],
       settings: {
-        foreground: "#6a737d",
+        foreground: "oklch(0.4701 0.0112 285.96)",
       },
     },
     {
@@ -35,7 +35,7 @@ export const myTheme: Theme = {
     {
       scope: "variable.parameter.function",
       settings: {
-        foreground: "#ffffff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
@@ -59,7 +59,7 @@ export const myTheme: Theme = {
     {
       scope: ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
       settings: {
-        foreground: "#ffffff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
@@ -89,7 +89,7 @@ export const myTheme: Theme = {
     {
       scope: "variable.other",
       settings: {
-        foreground: "#ffffff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
@@ -187,7 +187,7 @@ export const myTheme: Theme = {
     {
       scope: "punctuation.definition.list.begin.markdown",
       settings: {
-        foreground: "#ffab70",
+        foreground: "oklch(0.7583 0.1638 59.01)",
       },
     },
     {
@@ -200,21 +200,21 @@ export const myTheme: Theme = {
     {
       scope: "markup.quote",
       settings: {
-        foreground: "#85e89d",
+        foreground: "oklch(0.8314 0.2088 153.08)",
       },
     },
     {
       scope: "markup.italic",
       settings: {
         fontStyle: "italic",
-        foreground: "#ffffff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
       scope: "markup.bold",
       settings: {
         fontStyle: "bold",
-        foreground: "#ffffff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
@@ -232,28 +232,28 @@ export const myTheme: Theme = {
     {
       scope: "markup.inline.raw",
       settings: {
-        foreground: "#79b8ff",
+        foreground: "oklch(0.5552 0.1703 257.32)",
       },
     },
     {
       scope: ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
       settings: {
         background: "#86181d",
-        foreground: "#fdaeb7",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
       scope: ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
       settings: {
         background: "#144620",
-        foreground: "#85e89d",
+        foreground: "oklch(0.8314 0.2088 153.08)",
       },
     },
     {
       scope: ["markup.changed", "punctuation.definition.changed"],
       settings: {
         background: "#c24e00",
-        foreground: "#ffab70",
+        foreground: "oklch(0.7583 0.1638 59.01)",
       },
     },
     {
@@ -312,7 +312,7 @@ export const myTheme: Theme = {
       scope: ["constant.other.reference.link", "string.other.link"],
       settings: {
         fontStyle: "underline",
-        foreground: "#dbedff",
+        foreground: "oklch(0.7583 0.1638 59.01)",
       },
     },
   ],
