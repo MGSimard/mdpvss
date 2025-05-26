@@ -50,10 +50,9 @@ interface CodeProps {
   className?: string;
   children?: React.ReactNode;
   node?: any;
-  [key: string]: any;
 }
 
-const CodeHighlight = ({ inline, className, children, ...props }: CodeProps) => {
+const CodeHighlight = ({ inline, className, children }: CodeProps) => {
   const match = className?.match(/language-(\w+)/);
   const language = match ? match[1] : undefined;
   let code = "";
