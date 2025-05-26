@@ -89,6 +89,16 @@ img {
   max-width: 100%;
 }
 /**/
+/* HELPERS */
+.sr-only {
+  position: absolute;
+  left: -9999;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+/**/
 /* TOOLBAR */
 #toolbar {
   position: fixed;
@@ -261,16 +271,63 @@ img {
   font-size: 1.4rem;
   color: var(--clrPrimary);
   transition: color 0.2s ease-in-out;
-
   &.highlight {
     color: var(--clrSecondary);
     transition: none;
   }
 }
 /**/
+/* RESIZABLE CANVAS WRAPPER */
+#resizable-canvas-wrapper {
+  position: relative;
+}
+#handle-left,
+#handle-right {
+  position: absolute;
+  top: 0;
+  width: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clrTextMuted);
+  cursor: ew-resize;
+  z-index: 10;
+  outline: none;
+  &:hover,
+  &:focus-visible {
+    background: var(--clrEleOverlayHover);
+  }
+}
+#handle-left {
+  left: 0;
+  transform: translateX(-50%);
+}
+#handle-right {
+  right: 0;
+  transform: translateX(50%);
+}
+#width-display {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2rem;
+  text-align: center;
+  color: var(--clrTextMuted);
+  font-size: 1.4rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  &.visible {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/**/
 /* CANVAS */
 #canvas {
-  width: 76.8rem;
+  width: 100%;
   background: var(--clrBg);
   background-image: radial-gradient(
     circle at center -50%,
