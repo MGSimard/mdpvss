@@ -98,6 +98,10 @@ img {
   display: block;
   max-width: 100%;
 }
+ul,
+ol {
+  list-style-position: inside;
+}
 /**/
 /* HELPERS */
 .sr-only {
