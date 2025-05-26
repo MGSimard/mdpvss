@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import ShikiHighlighter, { rehypeInlineCodeProperty } from "react-shiki";
-import { myTheme } from "@/utils/2077";
 import ReactMarkdown from "react-markdown";
+import { myTheme } from "@/utils/2077";
 
 export function Markdown() {
   const { previewRenderedMarkdown } = useSettingsStore();
