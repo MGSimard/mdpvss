@@ -4,9 +4,6 @@ const paddingValues = [16, 32, 64, 128] as const;
 type PaddingValue = (typeof paddingValues)[number];
 
 interface SettingsStore {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-
   visibleBackground: boolean;
   toggleVisibleBackground: () => void;
 
@@ -25,9 +22,6 @@ interface SettingsStore {
 
 // Could be separate stores to localize re-renders but it's fine
 export const useSettingsStore = create<SettingsStore>((set) => ({
-  darkMode: true,
-  toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
-
   visibleBackground: true,
   toggleVisibleBackground: () => set((state) => ({ visibleBackground: !state.visibleBackground })),
 

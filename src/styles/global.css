@@ -28,6 +28,16 @@
   --clrEleOverlayClicked: oklch(from var(--clrPrimary) l c h / 0.7);
 }
 
+[data-theme="light"] {
+  --clrPrimary: oklch(0.3085 0.1548 275.01);
+  --clrSecondary: var(--clrPrimary);
+  --clrBg: oklch(0.9098 0 0);
+
+  --clrHeading: var(--clrSecondary);
+  --clrText: var(--clrPrimary);
+  --clrTextMuted: oklch(0.4701 0.0112 285.96);
+}
+
 /* CORE */
 * {
   margin: 0;
