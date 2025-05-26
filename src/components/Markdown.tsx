@@ -64,17 +64,10 @@ const CodeHighlight = ({ inline, className, children, ...props }: CodeProps) => 
   }
 
   return !inline ? (
-    <ShikiHighlighter
-      language={language || "markdown"}
-      theme={myTheme}
-      addDefaultStyles={false}
-      showLanguage={false}
-      {...props}>
+    <ShikiHighlighter language={language || "markdown"} theme={myTheme} addDefaultStyles={false} showLanguage={false}>
       {code}
     </ShikiHighlighter>
   ) : (
-    <code className={className} {...props}>
-      {code}
-    </code>
+    <code className={className}>{code}</code>
   );
 };
