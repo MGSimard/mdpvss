@@ -5,7 +5,7 @@ import { Draggable } from "gsap/Draggable";
 import { Flip } from "gsap/Flip";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { CyclePadding } from "./CyclePadding";
-import { ToggleDarkMode } from "./ToggleDarkMode";
+import { ToggleTheme } from "./ToggleTheme";
 import { ToggleBackground } from "./ToggleBackground";
 import { ToggleLineNumbers } from "./ToggleLineNumbers";
 import { TogglePreview } from "./TogglePreview";
@@ -33,7 +33,7 @@ export function Toolbar() {
           <div id="toolbar-left-inner"></div>
         </div>
         <div id="toolbar-right">
-          <ToggleDarkMode />
+          <ToggleTheme />
           <ToggleBackground />
           <ToggleLineNumbers />
           <CyclePadding />

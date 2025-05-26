@@ -1,6 +1,5 @@
 import { Toolbar } from "@/components/Toolbar/Toolbar";
 import { Canvas } from "@/components/Canvas";
-import { Debug } from "@/components/Debug";
 import { ResizableCanvasWrapper } from "@/components/ResizableCanvasWrapper";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
         <ResizableCanvasWrapper>
           <Canvas />
         </ResizableCanvasWrapper>
-        {/* <Debug /> */}
       </main>
     </>
   );

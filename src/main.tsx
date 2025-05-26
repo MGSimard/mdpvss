@@ -7,7 +7,7 @@ import "@/styles/fonts.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider disableTransitionOnChange>
+    <ThemeProvider disableTransitionOnChange defaultTheme="dark">
       <App />
     </ThemeProvider>
   </StrictMode>
