@@ -34,7 +34,7 @@ export const useSettingsStore = create<SettingsStore>((set) => ({
   visibleLineNumbers: true,
   toggleVisibleLineNumbers: () => set((state) => ({ visibleLineNumbers: !state.visibleLineNumbers })),
 
-  padding: 64,
+  padding: 32,
   cyclePadding: () =>
     set((state) => {
       const idx = paddingValues.indexOf(state.padding);
