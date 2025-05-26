@@ -11,3 +11,5 @@
 - [ ] Export as [PNG/SVG]
 - [ ] Copy PNG to clipboard
 - [ ] Image output size [?/?/?]
+
+- [ ] Metadata
