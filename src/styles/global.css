@@ -581,6 +581,14 @@ code,
 }
 
 /* RENDERED MARKDOWN */
+#markdown-rendered h1,
+#markdown-rendered h2,
+#markdown-rendered h3,
+#markdown-rendered h4,
+#markdown-rendered h5,
+#markdown-rendered h6 {
+  color: var(--clrSecondary);
+}
 #markdown-rendered ul,
 #markdown-rendered ol {
   margin-left: 1em;
