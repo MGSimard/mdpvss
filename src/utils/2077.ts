@@ -366,6 +366,8 @@ export const darkTheme: Theme = {
 
 const lmDarkBlue = "oklch(0.3085 0.1548 275.01)";
 const lmGreen = "oklch(0.6714 0.2088 153.08)";
+const lmYellow = "oklch(0.6972 0.1498 81.8)";
+const lmOrange = "oklch(0.6883 0.1638 59.01)";
 
 export const lightTheme: Theme = {
   name: "2077",
@@ -387,7 +389,7 @@ export const lightTheme: Theme = {
         "variable.other.enummember",
         "variable.language",
       ],
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: ["entity", "entity.name"],
@@ -395,11 +397,11 @@ export const lightTheme: Theme = {
     },
     {
       scope: "variable.parameter.function",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "entity.name.tag",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "keyword",
@@ -411,7 +413,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: ["string", "punctuation.definition.string", "string punctuation.section.embedded source"],
@@ -443,7 +445,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "string variable",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: ["source.regexp", "string.regexp"],
@@ -456,7 +458,7 @@ export const lightTheme: Theme = {
         "string.regexp source.ruby.embedded",
         "string.regexp string.regexp.arbitrary-repitition",
       ],
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "string.regexp constant.character.escape",
@@ -468,7 +470,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "support.variable",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "support.function",
@@ -512,11 +514,11 @@ export const lightTheme: Theme = {
     },
     {
       scope: "meta.import",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "meta.export",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "punctuation.definition.list.begin.markdown",
@@ -556,7 +558,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "punctuation.definition.fenced.markdown",
-      settings: { foreground: yellow, fontStyle: "bold" },
+      settings: { foreground: lmYellow, fontStyle: "bold" },
     },
     {
       scope: ["constant.other.reference.link", "string.other.link", "markup.underline.link"],
@@ -568,7 +570,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "markup.bold.inline.markdown",
-      settings: { fontStyle: "bold", foreground: yellow },
+      settings: { fontStyle: "bold", foreground: lmYellow },
     },
     {
       scope: "markup.italic.inline.markdown",
@@ -576,7 +578,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "markup.changed.markdown",
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "markup.deleted.markdown",
@@ -596,7 +598,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: ["markup.changed", "punctuation.definition.changed"],
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "meta.diff.range",
@@ -628,11 +630,11 @@ export const lightTheme: Theme = {
     },
     {
       scope: "entity.name.tag.css",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: ["entity.other.attribute-name.class.css", "entity.other.attribute-name.id.css"],
-      settings: { foreground: yellow },
+      settings: { foreground: lmYellow },
     },
     {
       scope: "support.type.property-name.css",
@@ -644,7 +646,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "constant.numeric.css",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "constant.other.color.rgb-value.css",
@@ -684,15 +686,15 @@ export const lightTheme: Theme = {
     },
     {
       scope: "constant.numeric",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "constant.language.boolean",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: ["constant.language.null", "constant.language.nil"],
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "entity.name.type.js",
@@ -708,7 +710,7 @@ export const lightTheme: Theme = {
     },
     {
       scope: "entity.name.tag.tsx",
-      settings: { foreground: orange },
+      settings: { foreground: lmOrange },
     },
     {
       scope: "support.variable.dom",
