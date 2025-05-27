@@ -11,40 +11,41 @@ export function Markdown() {
   const [textareaContent, setTextareaContent] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  return previewRenderedMarkdown ? (
-    <div id="markdown-rendered">
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm, remarkRemoveComments]}
-        rehypePlugins={[rehypeInlineCodeProperty]}
-        components={{
-          code: CodeHighlight,
-        }}>
-        {textareaContent}
-      </ReactMarkdown>
-    </div>
-  ) : (
-    <div id="markdown-raw" className={visibleLineNumbers ? "" : "hide"}>
-      <textarea
-        ref={textareaRef}
-        value={textareaContent}
-        onChange={(e) => setTextareaContent(e.target.value)}
-        spellCheck={false}
-        autoCorrect="off"
-        autoCapitalize="off"
-        autoComplete="off"
-      />
-      <ShikiHighlighter
-        className="markdown-raw-highlighted"
-        language="markdown"
-        theme={myTheme}
-        addDefaultStyles={false}
-        showLanguage={false}>
-        {textareaContent
-          .split("\n")
-          .map((line) => (line === "" ? "\u00A0" : line))
-          .join("\n")}
-      </ShikiHighlighter>
-    </div>
+  return (
+    <>
+      <div id="markdown-rendered" className={previewRenderedMarkdown ? "" : "hide"}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm, remarkRemoveComments]}
+          rehypePlugins={[rehypeInlineCodeProperty]}
+          components={{
+            code: CodeHighlight,
+          }}>
+          {textareaContent}
+        </ReactMarkdown>
+      </div>
+      <div id="markdown-raw" className={previewRenderedMarkdown ? "hide" : ""}>
+        <textarea
+          ref={textareaRef}
+          value={textareaContent}
+          onChange={(e) => setTextareaContent(e.target.value)}
+          spellCheck={false}
+          autoCorrect="off"
+          autoCapitalize="off"
+          autoComplete="off"
+        />
+        <ShikiHighlighter
+          className={`markdown-raw-highlighted${visibleLineNumbers ? "" : " hide-numbers"}`}
+          language="markdown"
+          theme={myTheme}
+          addDefaultStyles={false}
+          showLanguage={false}>
+          {textareaContent
+            .split("\n")
+            .map((line) => (line === "" ? "\u00A0" : line))
+            .join("\n")}
+        </ShikiHighlighter>
+      </div>
+    </>
   );
 }
 

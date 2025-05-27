@@ -123,6 +123,9 @@ td {
   height: 1px;
   overflow: hidden;
 }
+.hide {
+  display: none;
+}
 /**/
 /* TOOLBAR */
 #toolbar {
@@ -571,7 +574,7 @@ td {
   width: 3ch;
   overflow: hidden;
 }
-#markdown-raw.hide .markdown-raw-highlighted code .line::before {
+.markdown-raw-highlighted.hide-numbers code .line::before {
   display: none;
 }
 .markdown-raw-highlighted::selection {
