@@ -554,14 +554,14 @@ td {
   pointer-events: none;
 }
 /* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
-#markdown-raw.show-line-numbers .markdown-raw-highlighted code {
+#markdown-raw .markdown-raw-highlighted code {
   counter-reset: step;
   counter-increment: step 0;
 }
-#markdown-raw.show-line-numbers .markdown-raw-highlighted code .line {
+#markdown-raw .markdown-raw-highlighted code .line {
   position: relative;
 }
-#markdown-raw.show-line-numbers .markdown-raw-highlighted code .line::before {
+#markdown-raw .markdown-raw-highlighted code .line::before {
   content: counter(step);
   counter-increment: step;
   position: absolute;
@@ -570,6 +570,9 @@ td {
   color: var(--clrTextMuted);
   width: 3ch;
   overflow: hidden;
+}
+#markdown-raw.hide .markdown-raw-highlighted code .line::before {
+  display: none;
 }
 .markdown-raw-highlighted::selection {
   color: transparent;

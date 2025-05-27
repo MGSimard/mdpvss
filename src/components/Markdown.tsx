@@ -23,7 +23,7 @@ export function Markdown() {
       </ReactMarkdown>
     </div>
   ) : (
-    <div id="markdown-raw" className={visibleLineNumbers ? "show-line-numbers" : ""}>
+    <div id="markdown-raw" className={visibleLineNumbers ? "" : "hide"}>
       <textarea
         ref={textareaRef}
         value={textareaContent}
