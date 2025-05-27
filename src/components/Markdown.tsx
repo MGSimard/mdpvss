@@ -4,10 +4,12 @@ import ShikiHighlighter, { rehypeInlineCodeProperty } from "react-shiki";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkRemoveComments from "remark-remove-comments";
-import { myTheme } from "@/utils/2077";
+import { darkTheme, lightTheme } from "@/utils/2077";
+import { useTheme } from "next-themes";
 
 export function Markdown() {
   const { previewRenderedMarkdown, visibleLineNumbers } = useSettingsStore();
+  const { theme } = useTheme();
   const [textareaContent, setTextareaContent] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -36,7 +38,7 @@ export function Markdown() {
         <ShikiHighlighter
           className={`markdown-raw-highlighted${visibleLineNumbers ? "" : " hide-numbers"}`}
           language="markdown"
-          theme={myTheme}
+          theme={theme === "dark" ? darkTheme : lightTheme}
           addDefaultStyles={false}
           showLanguage={false}>
           {textareaContent
@@ -57,6 +59,7 @@ interface CodeProps {
 }
 
 const CodeHighlight = ({ inline, className, children }: CodeProps) => {
+  const { theme } = useTheme();
   const match = className?.match(/language-(\w+)/);
   const language = match ? match[1] : undefined;
   let code = "";
@@ -67,7 +70,11 @@ const CodeHighlight = ({ inline, className, children }: CodeProps) => {
   }
 
   return !inline ? (
-    <ShikiHighlighter language={language || "markdown"} theme={myTheme} addDefaultStyles={false} showLanguage={false}>
+    <ShikiHighlighter
+      language={language || "markdown"}
+      theme={theme === "dark" ? darkTheme : lightTheme}
+      addDefaultStyles={false}
+      showLanguage={false}>
       {code}
     </ShikiHighlighter>
   ) : (

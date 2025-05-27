@@ -12,9 +12,9 @@ const cyan = "oklch(0.8965 0.1273 200.71)";
 const darkestBlue = "oklch(0.1685 0.0187 284.21)";
 const muteGray = "oklch(0.4701 0.0112 285.96)";
 
-const locate = "oklch(0.7685 0.1842 336.71)";
+const locate = "oklch(0.7685 0.1842 336.71)"; // For debug
 
-export const myTheme: Theme = {
+export const darkTheme: Theme = {
   name: "2077",
   type: "dark",
   colors: {
@@ -360,6 +360,359 @@ export const myTheme: Theme = {
     {
       scope: "support.variable.dom",
       settings: { foreground: cyan },
+    },
+  ],
+} satisfies Theme;
+
+const lmDarkBlue = "oklch(0.3085 0.1548 275.01)";
+const lmGreen = "oklch(0.6714 0.2088 153.08)";
+
+export const lightTheme: Theme = {
+  name: "2077",
+  type: "light",
+  colors: {
+    "editor.background": "transparent",
+    "editor.foreground": lmDarkBlue,
+  },
+  tokenColors: [
+    {
+      scope: ["comment", "punctuation.definition.comment", "string.comment"],
+      settings: { foreground: muteGray },
+    },
+    {
+      scope: [
+        "constant",
+        "entity.name.constant",
+        "variable.other.constant",
+        "variable.other.enummember",
+        "variable.language",
+      ],
+      settings: { foreground: orange },
+    },
+    {
+      scope: ["entity", "entity.name"],
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "variable.parameter.function",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "entity.name.tag",
+      settings: { foreground: orange },
+    },
+    {
+      scope: "keyword",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: ["storage", "storage.type"],
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
+      settings: { foreground: yellow },
+    },
+    {
+      scope: ["string", "punctuation.definition.string", "string punctuation.section.embedded source"],
+      settings: { foreground: blue },
+    },
+    {
+      scope: "support",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.property-name",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: ["variable", "variable.other"],
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: ["invalid.broken", "invalid.deprecated", "invalid.illegal", "invalid.unimplemented"],
+      settings: { fontStyle: "italic", foreground: lmDarkBlue },
+    },
+    {
+      scope: "carriage-return",
+      settings: { fontStyle: "italic underline", foreground: lmDarkBlue },
+    },
+    {
+      scope: "message.error",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "string variable",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: ["source.regexp", "string.regexp"],
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: [
+        "string.regexp.character-class",
+        "string.regexp constant.character.escape",
+        "string.regexp source.ruby.embedded",
+        "string.regexp string.regexp.arbitrary-repitition",
+      ],
+      settings: { foreground: orange },
+    },
+    {
+      scope: "string.regexp constant.character.escape",
+      settings: { fontStyle: "bold", foreground: lmDarkBlue },
+    },
+    {
+      scope: "support.constant",
+      settings: { foreground: blue },
+    },
+    {
+      scope: "support.variable",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "support.function",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "support.class",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "support.type",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.module-reference",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.property-name",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.function-call",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.function",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.class",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.method-call",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.definition.variable",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.import",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "meta.export",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "punctuation.definition.list.begin.markdown",
+      settings: { fontStyle: "bold", foreground: lmDarkBlue },
+    },
+    {
+      scope: ["markup.heading", "markup.heading entity.name"],
+      settings: { fontStyle: "bold", foreground: lmDarkBlue },
+    },
+    {
+      scope: "markup.quote",
+      settings: { foreground: lmGreen },
+    },
+    {
+      scope: "markup.italic",
+      settings: { fontStyle: "italic" },
+    },
+    {
+      scope: "markup.bold",
+      settings: { fontStyle: "bold" },
+    },
+    {
+      scope: ["markup.underline"],
+      settings: { fontStyle: "underline" },
+    },
+    {
+      scope: ["markup.strikethrough"],
+      settings: { fontStyle: "strikethrough", foreground: muteGray },
+    },
+    {
+      scope: "markup.inline.raw",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: ["markup.fenced_code.block.markdown", "markup.raw.block.markdown"],
+      settings: { foreground: lmDarkBlue, fontStyle: "italic" },
+    },
+    {
+      scope: "punctuation.definition.fenced.markdown",
+      settings: { foreground: yellow, fontStyle: "bold" },
+    },
+    {
+      scope: ["constant.other.reference.link", "string.other.link", "markup.underline.link"],
+      settings: { fontStyle: "underline", foreground: lmDarkBlue },
+    },
+    {
+      scope: ["string.other.link.title.markdown", "string.other.link.description.markdown"],
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "markup.bold.inline.markdown",
+      settings: { fontStyle: "bold", foreground: yellow },
+    },
+    {
+      scope: "markup.italic.inline.markdown",
+      settings: { fontStyle: "italic", foreground: violet },
+    },
+    {
+      scope: "markup.changed.markdown",
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "markup.deleted.markdown",
+      settings: { foreground: red },
+    },
+    {
+      scope: "markup.inserted.markdown",
+      settings: { foreground: lmGreen },
+    },
+    {
+      scope: ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
+      settings: { foreground: red },
+    },
+    {
+      scope: ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
+      settings: { foreground: lmGreen },
+    },
+    {
+      scope: ["markup.changed", "punctuation.definition.changed"],
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "meta.diff.range",
+      settings: { fontStyle: "bold", foreground: violet },
+    },
+    {
+      scope: "meta.diff.header",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "meta.separator",
+      settings: { fontStyle: "bold", foreground: muteGray },
+    },
+    {
+      scope: "meta.output",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "entity.other.attribute-name",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "string.quoted",
+      settings: { foreground: blue },
+    },
+    {
+      scope: "punctuation.definition.tag",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "entity.name.tag.css",
+      settings: { foreground: orange },
+    },
+    {
+      scope: ["entity.other.attribute-name.class.css", "entity.other.attribute-name.id.css"],
+      settings: { foreground: yellow },
+    },
+    {
+      scope: "support.type.property-name.css",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "support.constant.property-value.css",
+      settings: { foreground: lmGreen },
+    },
+    {
+      scope: "constant.numeric.css",
+      settings: { foreground: orange },
+    },
+    {
+      scope: "constant.other.color.rgb-value.css",
+      settings: { foreground: blue },
+    },
+    {
+      scope: "punctuation.separator",
+      settings: { foreground: muteGray },
+    },
+    {
+      scope: "punctuation.terminator",
+      settings: { foreground: muteGray },
+    },
+    {
+      scope: "punctuation.section",
+      settings: { foreground: muteGray },
+    },
+    {
+      scope: "keyword.operator",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "keyword.operator.assignment",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "keyword.operator.arithmetic",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "keyword.operator.comparison",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "punctuation.operator",
+      settings: { foreground: muteGray },
+    },
+    {
+      scope: "constant.numeric",
+      settings: { foreground: orange },
+    },
+    {
+      scope: "constant.language.boolean",
+      settings: { foreground: orange },
+    },
+    {
+      scope: ["constant.language.null", "constant.language.nil"],
+      settings: { foreground: orange },
+    },
+    {
+      scope: "entity.name.type.js",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "variable.other.object.js",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "variable.other.property.js",
+      settings: { foreground: lmDarkBlue },
+    },
+    {
+      scope: "entity.name.tag.tsx",
+      settings: { foreground: orange },
+    },
+    {
+      scope: "support.variable.dom",
+      settings: { foreground: lmDarkBlue },
     },
   ],
 } satisfies Theme;
