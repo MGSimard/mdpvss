@@ -641,20 +641,7 @@ code,
   padding: 0.2em 0.5em;
   border: 1px solid var(--clrPrimary);
 }
-#markdown-rendered h1:not(:last-child),
-#markdown-rendered h2:not(:last-child),
-#markdown-rendered h3:not(:last-child),
-#markdown-rendered h4:not(:last-child),
-#markdown-rendered h5:not(:last-child),
-#markdown-rendered h6:not(:last-child),
-#markdown-rendered blockquote:not(:last-child),
-#markdown-rendered ul:not(:last-child),
-#markdown-rendered ol:not(:last-child),
-#markdown-rendered dl:not(:last-child),
-#markdown-rendered table:not(:last-child),
-#markdown-rendered pre:not(:last-child),
-#markdown-rendered details:not(:last-child),
-#markdown-rendered p:not(:last-child) {
+#markdown-rendered > *:not(hr) {
   margin-bottom: 1rem;
 }
 #markdown-rendered hr {
