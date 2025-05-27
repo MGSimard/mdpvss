@@ -596,7 +596,7 @@ code,
 #markdown-rendered blockquote {
   padding: 0.5em;
   border-left: 0.5em solid var(--clrEleBorderIdle);
-  background-color: var(--clrEleBorderIdle);
+  background-color: var(--clrEleOverlayHover);
   font-style: italic;
 }
 #markdown-rendered hr {
@@ -631,4 +631,8 @@ code,
 #markdown-rendered hr {
   margin: 1em 0;
   border-color: var(--clrTextMuted);
+}
+#markdown-rendered > pre {
+  background-color: var(--clrEleOverlayHover);
+  padding: 1em;
 }
