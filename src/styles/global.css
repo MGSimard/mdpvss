@@ -98,6 +98,19 @@ img {
   display: block;
   max-width: 100%;
 }
+pre,
+code {
+  font-family: var(--monoFont);
+  font-weight: 200;
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--clrPrimary);
+}
 /**/
 /* HELPERS */
 .sr-only {
@@ -545,6 +558,7 @@ img {
   pointer-events: none;
   touch-action: none;
 }
+
 #markdown-raw textarea,
 .markdown-raw-highlighted {
   width: 100%;
@@ -565,6 +579,7 @@ code,
   overflow-wrap: anywhere;
   overflow: hidden;
 }
+
 /* RENDERED MARKDOWN */
 #markdown-rendered ul,
 #markdown-rendered ol {
@@ -578,14 +593,7 @@ code,
   font-family: var(--monoFont);
   font-weight: 200;
 }
-#markdown-rendered p,
-#markdown-rendered blockquote,
-#markdown-rendered ul,
-#markdown-rendered ol,
-#markdown-rendered dl,
-#markdown-rendered table,
-#markdown-rendered pre,
-#markdown-rendered details {
+#markdown-rendered blockquote {
   padding: 0.5em;
   border-left: 0.5em solid var(--clrEleBorderIdle);
   background-color: var(--clrEleBorderIdle);
@@ -602,4 +610,24 @@ code,
 #markdown-rendered td {
   padding: 0.2em 0.5em;
   border: 1px solid var(--clrPrimary);
+}
+#markdown-rendered blockquote:not(:last-child),
+#markdown-rendered ul:not(:last-child),
+#markdown-rendered ol:not(:last-child),
+#markdown-rendered dl:not(:last-child),
+#markdown-rendered table:not(:last-child),
+#markdown-rendered pre:not(:last-child),
+#markdown-rendered details:not(:last-child) {
+  margin-bottom: 1rem;
+}
+#markdown-rendered ul,
+#markdown-rendered ol {
+  margin-left: 1em;
+}
+#markdown-rendered li input[type="checkbox"] {
+  vertical-align: middle;
+}
+#markdown-rendered hr {
+  margin: 1em 0;
+  border-color: var(--clrTextMuted);
 }
