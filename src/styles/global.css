@@ -617,7 +617,8 @@ code,
 #markdown-rendered dl:not(:last-child),
 #markdown-rendered table:not(:last-child),
 #markdown-rendered pre:not(:last-child),
-#markdown-rendered details:not(:last-child) {
+#markdown-rendered details:not(:last-child),
+#markdown-rendered p:not(:last-child) {
   margin-bottom: 1rem;
 }
 #markdown-rendered ul,
