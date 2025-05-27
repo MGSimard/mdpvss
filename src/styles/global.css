@@ -109,6 +109,10 @@ li input[type="checkbox"] {
 pre,
 code {
   font-family: var(--monoFont);
+  font-weight: 200;
+}
+hr {
+  border-color: var(--clrTextMuted);
 }
 /**/
 /* HELPERS */
@@ -545,14 +549,26 @@ code {
   -webkit-text-fill-color: transparent;
   text-size-adjust: none;
   caret-color: var(--clrText);
+
+  &::selection {
+    color: transparent;
+    background: var(--clrEleOverlayEnabled);
+  }
 }
 #card-content textarea,
 .markdown-raw-highlighted {
   width: 100%;
   min-height: 1lh;
   height: 100%;
-  font-family: monospace;
+  font-family: var(--monoFont);
+  font-weight: 200;
   font-size: 1.6rem;
+}
+.markdown-raw-highlighted::selection {
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+  touch-action: none;
 }
 #card-content textarea,
 .markdown-raw-highlighted,
