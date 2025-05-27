@@ -4,7 +4,6 @@ export function FileName() {
       id="file-name"
       placeholder="PLACEHOLDER.MD"
       type="text"
-      autoFocus
       autoCorrect="off"
       autoCapitalize="off"
       autoComplete="off"
