@@ -626,13 +626,6 @@ code,
 #markdown-rendered p:not(:last-child) {
   margin-bottom: 1rem;
 }
-#markdown-rendered ul,
-#markdown-rendered ol {
-  margin-left: 1em;
-}
-#markdown-rendered li input[type="checkbox"] {
-  vertical-align: middle;
-}
 #markdown-rendered hr {
   margin: 1em 0;
   border-color: var(--clrEleBorderIdle);
