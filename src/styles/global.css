@@ -599,10 +599,6 @@ code,
   background-color: var(--clrEleOverlayHover);
   font-style: italic;
 }
-#markdown-rendered hr {
-  margin: 1em 0;
-  border-color: var(--clrTextMuted);
-}
 #markdown-rendered table {
   border-collapse: collapse;
 }
@@ -630,7 +626,7 @@ code,
 }
 #markdown-rendered hr {
   margin: 1em 0;
-  border-color: var(--clrTextMuted);
+  border-color: var(--clrEleBorderIdle);
 }
 #markdown-rendered > pre {
   background-color: var(--clrEleOverlayHover);
