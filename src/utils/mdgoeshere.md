@@ -185,6 +185,10 @@ h1 {
 ^M
 ```
 
+<!-- meta.separator -->
+
+---
+
 <!-- punctuation.definition.list.begin.markdown -->
 
 - List item
@@ -277,3 +281,5 @@ public class Test {
     private String text; // storage.type.java for 'String'
 }
 ```
+
+> Quote

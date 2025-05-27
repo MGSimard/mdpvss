@@ -1,7 +1,7 @@
 import { Theme } from "react-shiki";
 
 const white = "oklch(1 0 0)";
-const lightGrey = "oklch(0.8624 0.0066 17.29)";
+const lightGray = "oklch(0.8624 0.0066 17.29)";
 const green = "oklch(0.8314 0.2088 153.08)";
 const blue = "oklch(0.5552 0.1703 257.32)";
 const violet = "oklch(0.5724 0.2706 303.91)";
@@ -13,12 +13,14 @@ const cyan = "oklch(0.8965 0.1273 200.71)";
 const darkestBlue = "oklch(0.1685 0.0187 284.21)";
 const muteGray = "oklch(0.4701 0.0112 285.96)";
 
+const locate = "oklch(0.7685 0.1842 336.71)";
+
 export const myTheme: Theme = {
   name: "2077",
   type: "dark",
   colors: {
-    "editor.background": "oklch(0.1685 0.0187 284.21)",
-    "editor.foreground": lightGrey,
+    "editor.background": "transparent",
+    "editor.foreground": white,
   },
   tokenColors: [
     {
@@ -37,39 +39,39 @@ export const myTheme: Theme = {
     },
     {
       scope: ["entity", "entity.name"],
-      settings: { foreground: white },
+      settings: { foreground: cyan },
     },
     {
       scope: "variable.parameter.function",
-      settings: { foreground: white },
+      settings: { foreground: yellow },
     },
     {
       scope: "entity.name.tag",
-      settings: { foreground: white },
+      settings: { foreground: orange },
     },
     {
       scope: "keyword",
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: ["storage", "storage.type"],
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: ["storage.modifier.package", "storage.modifier.import", "storage.type.java"],
-      settings: { foreground: white },
+      settings: { foreground: yellow },
     },
     {
       scope: ["string", "punctuation.definition.string", "string punctuation.section.embedded source"],
-      settings: { foreground: white },
+      settings: { foreground: blue },
     },
     {
       scope: "support",
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: "meta.property-name",
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: "variable",
@@ -97,7 +99,7 @@ export const myTheme: Theme = {
     },
     {
       scope: "carriage-return",
-      settings: { background: white, fontStyle: "italic underline", foreground: "#24292e" },
+      settings: { background: white, fontStyle: "italic underline", foreground: white },
     },
     {
       scope: "message.error",
@@ -109,7 +111,7 @@ export const myTheme: Theme = {
     },
     {
       scope: ["source.regexp", "string.regexp"],
-      settings: { foreground: white },
+      settings: { foreground: cyan },
     },
     {
       scope: [
@@ -126,11 +128,11 @@ export const myTheme: Theme = {
     },
     {
       scope: "support.constant",
-      settings: { foreground: white },
+      settings: { foreground: blue },
     },
     {
       scope: "support.variable",
-      settings: { foreground: white },
+      settings: { foreground: yellow },
     },
     {
       scope: "meta.module-reference",
@@ -138,15 +140,15 @@ export const myTheme: Theme = {
     },
     {
       scope: "punctuation.definition.list.begin.markdown",
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: ["markup.heading", "markup.heading entity.name"],
-      settings: { fontStyle: "bold", foreground: white },
+      settings: { fontStyle: "bold", foreground: cyan },
     },
     {
       scope: "markup.quote",
-      settings: { foreground: white },
+      settings: { foreground: green },
     },
     {
       scope: "markup.italic",
@@ -166,27 +168,27 @@ export const myTheme: Theme = {
     },
     {
       scope: "markup.inline.raw",
-      settings: { foreground: white },
+      settings: { foreground: blue },
     },
     {
       scope: ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
-      settings: { foreground: white },
+      settings: { foreground: red },
     },
     {
       scope: ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
-      settings: { foreground: white },
+      settings: { foreground: green },
     },
     {
       scope: ["markup.changed", "punctuation.definition.changed"],
-      settings: { foreground: white },
+      settings: { foreground: yellow },
     },
     {
       scope: ["markup.ignored", "markup.untracked"],
-      settings: { background: white, foreground: "#2f363d" },
+      settings: { background: white, foreground: muteGray },
     },
     {
       scope: "meta.diff.range",
-      settings: { fontStyle: "bold", foreground: white },
+      settings: { fontStyle: "bold", foreground: violet },
     },
     {
       scope: "meta.diff.header",
@@ -194,7 +196,7 @@ export const myTheme: Theme = {
     },
     {
       scope: "meta.separator",
-      settings: { fontStyle: "bold", foreground: white },
+      settings: { fontStyle: "bold", foreground: muteGray },
     },
     {
       scope: "meta.output",
