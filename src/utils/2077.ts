@@ -287,29 +287,25 @@ export const myTheme: Theme = {
       },
     },
     {
-      scope: [
-        "brackethighlighter.tag",
-        "brackethighlighter.curly",
-        "brackethighlighter.round",
-        "brackethighlighter.square",
-        "brackethighlighter.angle",
-        "brackethighlighter.quote",
-      ],
-      settings: {
-        foreground: "#d1d5da",
-      },
-    },
-    {
-      scope: "brackethighlighter.unmatched",
-      settings: {
-        foreground: "#fdaeb7",
-      },
-    },
-    {
       scope: ["constant.other.reference.link", "string.other.link"],
       settings: {
         fontStyle: "underline",
         foreground: "oklch(0.8965 0.1273 200.71)",
+      },
+    },
+    {
+      scope: ["markup.fenced_code.block.markdown", "markup.raw.block.markdown"],
+      settings: {
+        background: "oklch(0.18 0.02 240.0)",
+        foreground: "oklch(0.85 0.01 240.0)",
+        fontStyle: "italic",
+      },
+    },
+    {
+      scope: "punctuation.definition.fenced.markdown",
+      settings: {
+        foreground: "oklch(0.7 0.15 200.0)",
+        fontStyle: "bold",
       },
     },
   ],

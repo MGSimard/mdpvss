@@ -204,19 +204,3 @@ echo "Hello, World!"
 <!-- meta.separator -->
 
 ---
-
-<!-- meta.separator -->
-
-**Horizontal rule:**
-
----
-
-<!-- meta.property-name: property name in JSON/JS code block -->
-
-```json
-{
-  "propertyName": "value"
-}
-```
-
-<!-- meta.separator -->
