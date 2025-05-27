@@ -28,7 +28,6 @@
   --clrEleOverlayEnabled: oklch(from var(--clrPrimary) l c h / 0.4);
   --clrEleOverlayClicked: oklch(from var(--clrPrimary) l c h / 0.7);
 }
-
 [data-theme="light"] {
   --clrPrimary: oklch(0.3085 0.1548 275.01);
   --clrSecondary: var(--clrPrimary);
@@ -38,7 +37,10 @@
   --clrText: var(--clrPrimary);
   --clrTextMuted: oklch(0.4701 0.0112 285.96);
 }
-
+::selection {
+  color: var(--clrBg);
+  background: var(--clrEleOverlayEnabled);
+}
 /* CORE */
 * {
   margin: 0;
@@ -546,7 +548,6 @@ td {
 
   &::selection {
     color: transparent;
-    background: var(--clrEleOverlayEnabled);
   }
 }
 .markdown-raw-highlighted {
