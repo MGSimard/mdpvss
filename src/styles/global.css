@@ -582,6 +582,9 @@ code,
 }
 
 /* RENDERED MARKDOWN */
+#markdown-rendered {
+  min-height: 1lh;
+}
 #markdown-rendered h1,
 #markdown-rendered h2,
 #markdown-rendered h3,
