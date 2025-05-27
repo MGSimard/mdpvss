@@ -210,3 +210,13 @@ echo "Hello, World!"
 **Horizontal rule:**
 
 ---
+
+<!-- meta.property-name: property name in JSON/JS code block -->
+
+```json
+{
+  "propertyName": "value"
+}
+```
+
+<!-- meta.separator -->

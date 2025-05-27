@@ -23,7 +23,7 @@ export const myTheme: Theme = {
         "variable.language",
       ],
       settings: {
-        foreground: "#79b8ff",
+        foreground: "oklch(0.8624 0.0066 17.29)",
       },
     },
     {
@@ -71,25 +71,25 @@ export const myTheme: Theme = {
     {
       scope: "support",
       settings: {
-        foreground: "#79b8ff",
+        foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
       scope: "meta.property-name",
       settings: {
-        foreground: "#79b8ff",
+        foreground: "#fff",
       },
     },
     {
       scope: "variable",
       settings: {
-        foreground: "#ffab70",
+        foreground: "oklch(0.8072 0.1498 81.8)",
       },
     },
     {
       scope: "variable.other",
       settings: {
-        foreground: "oklch(0.6565 0.2298 24.01)",
+        foreground: "oklch(0.8072 0.1498 81.8)",
       },
     },
     {
@@ -187,7 +187,7 @@ export const myTheme: Theme = {
     {
       scope: "punctuation.definition.list.begin.markdown",
       settings: {
-        foreground: "oklch(0.7583 0.1638 59.01)",
+        foreground: "oklch(0.8965 0.1273 200.71)",
       },
     },
     {
@@ -232,27 +232,24 @@ export const myTheme: Theme = {
     {
       scope: "markup.inline.raw",
       settings: {
-        foreground: "oklch(0.5552 0.1703 257.32)",
+        foreground: "oklch(0.8072 0.1498 81.8)",
       },
     },
     {
       scope: ["markup.deleted", "meta.diff.header.from-file", "punctuation.definition.deleted"],
       settings: {
-        background: "#86181d",
         foreground: "oklch(0.6565 0.2298 24.01)",
       },
     },
     {
       scope: ["markup.inserted", "meta.diff.header.to-file", "punctuation.definition.inserted"],
       settings: {
-        background: "#144620",
         foreground: "oklch(0.8314 0.2088 153.08)",
       },
     },
     {
       scope: ["markup.changed", "punctuation.definition.changed"],
       settings: {
-        background: "#c24e00",
         foreground: "oklch(0.7583 0.1638 59.01)",
       },
     },
@@ -312,7 +309,7 @@ export const myTheme: Theme = {
       scope: ["constant.other.reference.link", "string.other.link"],
       settings: {
         fontStyle: "underline",
-        foreground: "oklch(0.7583 0.1638 59.01)",
+        foreground: "oklch(0.8965 0.1273 200.71)",
       },
     },
   ],
