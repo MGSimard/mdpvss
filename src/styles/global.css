@@ -545,7 +545,7 @@ td {
   -webkit-text-fill-color: transparent;
   text-size-adjust: none;
   caret-color: var(--clrText);
-
+  overflow: hidden;
   &::selection {
     color: transparent;
   }
@@ -596,6 +596,7 @@ code,
   word-break: break-all;
   overflow-wrap: anywhere;
 }
+
 /* RENDERED MARKDOWN */
 #markdown-rendered {
   min-height: 1lh;
