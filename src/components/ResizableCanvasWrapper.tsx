@@ -4,12 +4,14 @@ const MIN_WIDTH = 285;
 const MAX_WIDTH = 1440;
 const WIDTH_DISPLAY_TIMEOUT = 600;
 
-function clampWidth(width: number) {
-  return Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, width));
+function clampWidth(width: number, maxWidth: number) {
+  return Math.max(MIN_WIDTH, Math.min(maxWidth, width));
 }
 
+const getMaxAllowedWidth = () => Math.min(MAX_WIDTH, window.innerWidth - 40);
+
 const getInitialWidth = () => {
-  return clampWidth(Math.min(720, window.innerWidth - 20));
+  return clampWidth(Math.min(720, window.innerWidth - 20), getMaxAllowedWidth());
 };
 
 export function ResizableCanvasWrapper({ children }: { children: React.ReactNode }) {
@@ -49,7 +51,8 @@ export function ResizableCanvasWrapper({ children }: { children: React.ReactNode
     if (!dragging.current) return;
     let delta = e.clientX - startX.current;
     if (dragging.current === "left") delta = -delta;
-    let newWidth = clampWidth(startWidth.current + delta * 2);
+    let maxAllowed = getMaxAllowedWidth();
+    let newWidth = clampWidth(startWidth.current + delta * 2, maxAllowed);
     setWidth(Math.round(newWidth));
     showWidthTemporarily();
   };
@@ -73,8 +76,8 @@ export function ResizableCanvasWrapper({ children }: { children: React.ReactNode
 
   useEffect(() => {
     const handleResize = () => {
-      const maxAllowed = clampWidth(Math.min(720, window.innerWidth - 20));
-      setWidth((w) => clampWidth(Math.min(w, maxAllowed)));
+      const maxAllowed = getMaxAllowedWidth();
+      setWidth((w) => clampWidth(Math.min(w, maxAllowed), maxAllowed));
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -84,7 +87,8 @@ export function ResizableCanvasWrapper({ children }: { children: React.ReactNode
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       setWidth((w) => {
         let delta = e.key === "ArrowLeft" ? (side === "left" ? 10 : -10) : side === "left" ? -10 : 10;
-        let newW = clampWidth(w + delta);
+        let maxAllowed = getMaxAllowedWidth();
+        let newW = clampWidth(w + delta, maxAllowed);
         return newW;
       });
       showWidthTemporarily();
