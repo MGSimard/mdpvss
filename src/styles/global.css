@@ -636,3 +636,6 @@ code,
   background-color: var(--clrEleOverlayHover);
   padding: 1em;
 }
+#markdown-rendered p > code {
+  background-color: var(--clrEleOverlayHover);
+}
