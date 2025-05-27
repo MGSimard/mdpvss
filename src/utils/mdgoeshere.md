@@ -1,285 +1,257 @@
-<!-- comment, punctuation.definition.comment, string.comment, constant, entity.name.constant, variable.other.constant, variable.other.enummember, variable.language, entity, entity.name, variable.parameter.function, keyword, storage, storage.type, storage.modifier.package, storage.modifier.import, storage.type.java, string, punctuation.definition.string, string punctuation.section.embedded source, support, variable, variable.other, invalid.broken, invalid.deprecated, invalid.illegal, invalid.unimplemented, message.error, string variable, source.regexp, string.regexp, string.regexp.character-class, string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition, support.constant, support.variable, meta.module-reference -->
+# Markdown Feature Test Document
 
-<!-- JavaScript (js) -->
+This document is designed to test various markdown features for rendering and highlighting.
 
-```js
-// comment, punctuation.definition.comment, string.comment
-// This is a comment
+## Headers
 
-// constant, entity.name.constant, variable.other.constant, variable.other.enummember, variable.language
-const PI = 3.14;
+Let's test different header levels:
 
-// entity, entity.name
-class MyClass {}
+# Header 1
 
-// variable.parameter.function
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+## Paragraphs
+
+Here is a simple paragraph.
+
+This is another paragraph, separated by a blank line.
+
+## Emphasis
+
+Let's test emphasis:
+
+_This text is italic._
+_This text is also italic._
+
+**This text is bold.**
+**This text is also bold.**
+
+**_This text is bold and italic._**
+**_This text is also bold and italic._**
+
+## Lists
+
+### Unordered Lists
+
+- Item 1
+- Item 2
+  - Nested item 2a
+  - Nested item 2b
+- Item 3
+
+* Another item
+
+- Yet another item
+
+### Ordered Lists
+
+1. First item
+2. Second item
+   1. Nested ordered item 2a
+   2. Nested ordered item 2b
+3. Third item
+
+## Links
+
+Here is an [inline link](https://www.example.com).
+
+Here is a [link with a title](https://www.example.com "Example Website").
+
+Here is a reference-style link:
+[Reference link][ref]
+
+[ref]: https://www.example.com/reference "Reference Title"
+
+## Images
+
+Here is an inline image:
+![Alt text](https://via.placeholder.com/150 "Placeholder Image")
+
+Here is a reference-style image:
+![Alt text for reference image][imgref]
+
+[imgref]: https://via.placeholder.com/150/0000FF/FFFFFF "Blue Placeholder Image"
+
+## Blockquotes
+
+> This is a blockquote.
+> It can span multiple lines.
+
+> This is a blockquote with multiple paragraphs.
+>
+> This is the second paragraph.
+
+> Blockquotes can contain other markdown elements:
+>
+> - Like lists
+> - Or **bold** text
+
+## Code
+
+Here is some `inline code`.
+
+### Code Blocks
+
+#### Fenced Code Blocks
+
+```javascript
 function greet(name) {
-  return name;
+  console.log("Hello, " + name + "!");
 }
 
-// keyword
-if (true) {
-}
-
-// storage, storage.type
-let x;
-
-// storage.modifier.package, storage.modifier.import, storage.type.java
-import something from "module";
-import * as mod from "mod";
-
-// string, punctuation.definition.string, string punctuation.section.embedded source
-("This is a string");
-
-// support
-console.log("support");
-
-// variable
-let variable = 1;
-
-// variable.other
-let otherVariable = 2;
-
-// invalid.broken
-// @ts-expect-error
-broken();
-
-// invalid.deprecated
-// @deprecated
-function oldFunc() {}
-
-// invalid.illegal
-// This is not valid JS, but for scope preview:
-// #illegal
-
-// invalid.unimplemented
-throw new Error("Unimplemented");
-
-// message.error
-throw new Error("error");
-
-// string variable
-let str = variable;
-
-// source.regexp, string.regexp
-/foo/ /
-  // string.regexp.character-class, string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition
-  [a - z] /
-  // string.regexp constant.character.escape
-  /\n/;
-
-// support.constant
-const MAX = 100;
-
-// support.variable
-let supportVar = 1;
-
-let message = "Hello, World!";
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-if (message) {
-  console.log(message);
-}
+greet("World");
 ```
-
-<!-- TypeScript (ts) -->
-
-```ts
-// TypeScript Example
-interface User {
-  id: number;
-  name: string;
-}
-const user: User = { id: 1, name: "Alice" };
-function getUser(id: number): User | undefined {
-  return id === user.id ? user : undefined;
-}
-```
-
-<!-- Python (python) -->
 
 ```python
-# Comment
 def greet(name):
-    """Docstring"""
-    greeting = f"Hello, {name}!"
-    print(greeting)
-    return greeting
-if __name__ == "__main__":
-    greet("World")
+    print(f"Hello, {name}!")
+
+greet("World")
 ```
-
-<!-- JSON (json) -->
-
-```json
-{
-  "propertyName": "value",
-  "number": 123,
-  "array": [1, 2, 3],
-  "boolean": true
-}
-```
-
-<!-- Bash (bash, sh) -->
-
-```bash
-# Bash Example
-echo "Hello, World!"
-NAME="Alice"
-if [ "$NAME" = "Alice" ]; then
-  echo "Hi, $NAME!"
-fi
-```
-
-<!-- HTML (html) -->
 
 ```html
-<!-- HTML Example -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
+    <title>Test HTML</title>
   </head>
   <body>
-    <h1>Hello, <span>World!</span></h1>
+    <h1>This is a test</h1>
   </body>
 </html>
 ```
 
-<!-- CSS (css) -->
+#### Indented Code Blocks
 
-```css
-/* CSS Example */
-body {
-  background: #222;
-  color: #eee;
-  font-family: "JetBrains Mono", monospace;
-}
-h1 {
-  color: cyan;
-  font-weight: bold;
-}
-```
+    This is an indented code block.
+    It is typically indented with four spaces or a tab.
 
-<!-- Diff (diff) -->
+    ```This looks like a fenced block but is indented```
 
-```diff
-- deleted        // markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted
-+ inserted       // markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted
-! changed        // markup.changed, punctuation.definition.changed
-@@ range @@      // meta.diff.range
---- header       // meta.diff.header
-```
-
-<!-- meta.property-name -->
-
-```json
-// meta.property-name
-{ "propertyName": "value" }
-```
-
-<!-- carriage-return -->
-
-```
-^M
-```
-
-<!-- meta.separator -->
+## Horizontal Rules
 
 ---
 
-<!-- punctuation.definition.list.begin.markdown -->
+---
 
-- List item
+---
 
-<!-- markup.heading, markup.heading entity.name -->
+## Tables
 
-# Heading
+(Note: Tables are a CommonMark extension, not part of the original Markdown spec, but widely supported)
 
-<!-- markup.quote -->
+| Header 1     | Header 2     | Header 3     |
+| ------------ | ------------ | ------------ |
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+| Row 3, Col 1 | Row 3, Col 2 | Row 3, Col 3 |
 
-> Quote
+Alignment:
 
-<!-- markup.italic -->
+| Left Aligned | Center Aligned | Right Aligned |
+| :----------- | :------------: | ------------: |
+| Content      |    Content     |       Content |
+| More Content |  More Content  |  More Content |
 
-_italic_
+## Task Lists
 
-<!-- markup.bold -->
+(Note: Task lists are also a CommonMark extension)
 
-**bold**
+- [x] Completed task
+- [ ] Incomplete task
+- [ ] Another incomplete task
 
-<!-- markup.underline -->
+## Escaping Characters
 
-<u>underline</u>
+Let's test escaping markdown characters:
 
-<!-- markup.strikethrough -->
+\* An asterisk
+\_ An underscore
+\` A backtick
+\[ A square bracket
+\] A square bracket
+\( A parenthesis
+\) A parenthesis
+\# A hash symbol
+\+ A plus symbol
+\- A minus symbol
+\. A dot
+\! An exclamation mark
 
-~~strikethrough~~
+## HTML
 
-<!-- markup.inline.raw -->
+You can include raw HTML:
 
-`inline code`
+<p>This is a raw HTML paragraph.</p>
 
-<!-- markup.ignored, markup.untracked -->
-
-- [ ] task (unchecked)
-- [x] task (checked)
-
-<!-- markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted, markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted, markup.changed, punctuation.definition.changed, meta.diff.range, meta.diff.header -->
-
-```diff
-- deleted        // markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted
-+ inserted       // markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted
-! changed        // markup.changed, punctuation.definition.changed
-@@ range @@      // meta.diff.range
---- header       // meta.diff.header
-```
-
-## <!-- meta.separator -->
-
-<!-- meta.output -->
-
-```
-output
-```
-
-<!-- constant.other.reference.link, string.other.link -->
-
-[OpenAI](https://openai.com)
-
-<!-- markup.fenced_code.block.markdown, markup.raw.block.markdown -->
-
-```
-code block
-```
-
-<!-- punctuation.definition.fenced.markdown -->
-
-```
-fenced code block
-```
-
-<!-- entity.name.tag -->
+<br>
 
 ```html
-<div>
-  <span>Entity Name Tag</span>
-  <custom-element>Custom Tag</custom-element>
-  <MyComponent />
-</div>
+<p>This is a raw HTML paragraph within a code block.</p>
 ```
 
-<!-- storage.modifier.package, storage.modifier.import, storage.type.java -->
+## Definition Lists
 
-```java
-package com.example; // storage.modifier.package
-import java.util.List; // storage.modifier.import
+(Note: Definition lists are less common and not in the original Markdown spec or CommonMark, but supported by some renderers)
 
-public class Test {
-    private int number; // storage.type.java for 'int'
-    private String text; // storage.type.java for 'String'
-}
-```
+Term 1
+: Definition 1
+: Definition 2
 
-> Quote
+Term 2
+: Definition for Term 2
+
+## Footnotes
+
+(Note: Footnotes are another extension)
+
+Here is some text with a footnote[^1]. And another one[^2].
+
+[^1]: This is the first footnote.
+[^2]: This is the second footnote.
+
+## Strikethrough
+
+(Note: Strikethrough is a CommonMark extension)
+
+~~This text should be struck through.~~
+
+## Keyboard Keys
+
+(Note: This is often a renderer-specific feature)
+
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.
+
+## Highlight
+
+(Note: This is a renderer-specific feature)
+
+==This text should be highlighted.==
+
+## Superscript and Subscript
+
+(Note: These are often renderer-specific features)
+
+Superscript: X^2^
+Subscript: H~2~O
+
+## Abbreviations
+
+(Note: This is a renderer-specific feature)
+
+_[HTML]: HyperText Markup Language
+_[CSS]: Cascading Style Sheets
+
+The HTML is for structure, and the CSS is for styling.
+
+---
+
+This concludes the markdown feature test document.

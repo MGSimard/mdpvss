@@ -207,11 +207,11 @@ export const myTheme: Theme = {
     },
     {
       scope: ["constant.other.reference.link", "string.other.link", "markup.underline.link"],
-      settings: { fontStyle: "underline", foreground: cyan },
+      settings: { fontStyle: "underline", foreground: red },
     },
     {
       scope: ["string.other.link.title.markdown", "string.other.link.description.markdown"],
-      settings: { foreground: red },
+      settings: { foreground: white },
     },
     {
       scope: "markup.bold.inline.markdown",
