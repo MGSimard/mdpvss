@@ -111,6 +111,7 @@ code {
   font-weight: 200;
 }
 hr {
+  margin: 1em 0;
   border-color: var(--clrTextMuted);
 }
 table {
