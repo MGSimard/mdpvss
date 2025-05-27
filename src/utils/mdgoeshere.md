@@ -1,206 +1,279 @@
-<!-- markup.heading -->
+<!-- comment, punctuation.definition.comment, string.comment, constant, entity.name.constant, variable.other.constant, variable.other.enummember, variable.language, entity, entity.name, variable.parameter.function, keyword, storage, storage.type, storage.modifier.package, storage.modifier.import, storage.type.java, string, punctuation.definition.string, string punctuation.section.embedded source, support, variable, variable.other, invalid.broken, invalid.deprecated, invalid.illegal, invalid.unimplemented, message.error, string variable, source.regexp, string.regexp, string.regexp.character-class, string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition, support.constant, support.variable, meta.module-reference -->
 
-# Heading 1
-
-<!-- markup.heading -->
-
-## Heading 2
-
-<!-- markup.heading -->
-
-### Heading 3
-
-<!-- markup.heading -->
-
-#### Heading 4
-
-<!-- markup.heading -->
-
-##### Heading 5
-
-<!-- markup.heading -->
-
-###### Heading 6
-
-<!-- meta.separator -->
-
----
-
-<!-- markup.quote -->
-
-> This is a blockquote.
->
-> <!-- markup.quote (nested) -->
->
-> > Nested blockquote.
-
-<!-- markup.bold -->
-
-**Bold text**
-
-<!-- markup.italic -->
-
-_Italic text_
-
-<!-- markup.bold + markup.italic -->
-
-**_Bold and italic text_**
-
-<!-- markup.strikethrough -->
-
-~~Strikethrough text~~
-
-<!-- markup.underline -->
-
-<u>Underlined text</u>
-
-<!-- meta.separator -->
-
----
-
-<!-- list items (no direct scope, but punctuation.definition.list.begin.markdown for bullets) -->
-
-- Unordered list item 1
-  - Nested unordered item
-    - Deeply nested unordered item
-- Unordered list item 2
-
-<!-- list items (no direct scope, but punctuation.definition.list.begin.markdown for numbers) -->
-
-1. Ordered list item 1
-2. Ordered list item 2
-   1. Nested ordered item
-   2. Another nested item
-
-<!-- meta.separator -->
-
----
-
-<!-- GFM task list: punctuation.definition.list.begin.markdown for the dash, markup.ignored for the checkbox -->
-
-- [ ] Task list item (unchecked)
-- [x] Task list item (checked)
-
-<!-- meta.separator -->
-
----
-
-<!-- constant.other.reference.link, string.other.link -->
-
-[Link to OpenAI](https://openai.com)
-
-<!-- image: no direct scope, but often treated as a link -->
-
-![Sample Image](https://placekitten.com/200/100)
-
-<!-- meta.separator -->
-
----
-
-<!-- markup.inline.raw -->
-
-Inline code: `const foo = "bar";`
-
-<!-- meta.separator -->
-
----
-
-<!-- source.js, comment, string, variable, etc. -->
+<!-- JavaScript (js) -->
 
 ```js
-// JavaScript code block
+// comment, punctuation.definition.comment, string.comment
+// This is a comment
+
+// constant, entity.name.constant, variable.other.constant, variable.other.enummember, variable.language
+const PI = 3.14;
+
+// entity, entity.name
+class MyClass {}
+
+// variable.parameter.function
 function greet(name) {
-  // This is a comment
-  const greeting = `Hello, ${name}!`;
-  return greeting;
+  return name;
 }
-greet("World");
+
+// keyword
+if (true) {
+}
+
+// storage, storage.type
+let x;
+
+// storage.modifier.package, storage.modifier.import, storage.type.java
+import something from "module";
+import * as mod from "mod";
+
+// string, punctuation.definition.string, string punctuation.section.embedded source
+("This is a string");
+
+// support
+console.log("support");
+
+// variable
+let variable = 1;
+
+// variable.other
+let otherVariable = 2;
+
+// invalid.broken
+// @ts-expect-error
+broken();
+
+// invalid.deprecated
+// @deprecated
+function oldFunc() {}
+
+// invalid.illegal
+// This is not valid JS, but for scope preview:
+// #illegal
+
+// invalid.unimplemented
+throw new Error("Unimplemented");
+
+// message.error
+throw new Error("error");
+
+// string variable
+let str = variable;
+
+// source.regexp, string.regexp
+/foo/ /
+  // string.regexp.character-class, string.regexp constant.character.escape, string.regexp source.ruby.embedded, string.regexp string.regexp.arbitrary-repitition
+  [a - z] /
+  // string.regexp constant.character.escape
+  /\n/;
+
+// support.constant
+const MAX = 100;
+
+// support.variable
+let supportVar = 1;
+
+let message = "Hello, World!";
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+if (message) {
+  console.log(message);
+}
 ```
 
-<!-- source.python, comment, string, variable, etc. -->
+<!-- TypeScript (ts) -->
+
+```ts
+// TypeScript Example
+interface User {
+  id: number;
+  name: string;
+}
+const user: User = { id: 1, name: "Alice" };
+function getUser(id: number): User | undefined {
+  return id === user.id ? user : undefined;
+}
+```
+
+<!-- Python (python) -->
 
 ```python
-# Python code block
+# Comment
 def greet(name):
-    """This is a docstring"""
-    return "Hello, {name}!"
-greet("World")
+    """Docstring"""
+    greeting = f"Hello, {name}!"
+    print(greeting)
+    return greeting
+if __name__ == "__main__":
+    greet("World")
 ```
 
-<!-- source.json, constant, string, number, etc. -->
+<!-- JSON (json) -->
 
 ```json
 {
-  "key": "value",
+  "propertyName": "value",
   "number": 123,
-  "array": [1, 2, 3]
+  "array": [1, 2, 3],
+  "boolean": true
 }
 ```
 
-<!-- diff: markup.deleted, markup.inserted, markup.changed, comment -->
-
-```diff
-- This line was removed
-+ This line was added
-! This line was changed
-# This is a comment
-```
-
-<!-- source.shell, comment, string, etc. -->
+<!-- Bash (bash, sh) -->
 
 ```bash
-# Bash code block
+# Bash Example
 echo "Hello, World!"
+NAME="Alice"
+if [ "$NAME" = "Alice" ]; then
+  echo "Hi, $NAME!"
+fi
 ```
 
-<!-- meta.separator -->
+<!-- HTML (html) -->
 
----
+```html
+<!-- HTML Example -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>Hello, <span>World!</span></h1>
+  </body>
+</html>
+```
 
-<!-- table: no direct scope, but markup.inline.raw for code, markup.bold, markup.italic -->
+<!-- CSS (css) -->
 
-| Table    | Header   | Example |
-| -------- | -------- | ------- |
-| Cell     | Cell     | Cell    |
-| **Bold** | _Italic_ | `Code`  |
+```css
+/* CSS Example */
+body {
+  background: #222;
+  color: #eee;
+  font-family: "JetBrains Mono", monospace;
+}
+h1 {
+  color: cyan;
+  font-weight: bold;
+}
+```
 
-<!-- meta.separator -->
+<!-- Diff (diff) -->
 
----
+```diff
+- deleted        // markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted
++ inserted       // markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted
+! changed        // markup.changed, punctuation.definition.changed
+@@ range @@      // meta.diff.range
+--- header       // meta.diff.header
+```
 
-<!-- comment -->
-<!-- HTML comment -->
+<!-- meta.property-name -->
 
-<!-- meta.separator -->
+```json
+// meta.property-name
+{ "propertyName": "value" }
+```
 
----
+<!-- carriage-return -->
+
+```
+^M
+```
+
+<!-- punctuation.definition.list.begin.markdown -->
+
+- List item
+
+<!-- markup.heading, markup.heading entity.name -->
+
+# Heading
+
+<!-- markup.quote -->
+
+> Quote
+
+<!-- markup.italic -->
+
+_italic_
+
+<!-- markup.bold -->
+
+**bold**
+
+<!-- markup.underline -->
+
+<u>underline</u>
+
+<!-- markup.strikethrough -->
+
+~~strikethrough~~
+
+<!-- markup.inline.raw -->
+
+`inline code`
+
+<!-- markup.ignored, markup.untracked -->
+
+- [ ] task (unchecked)
+- [x] task (checked)
+
+<!-- markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted, markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted, markup.changed, punctuation.definition.changed, meta.diff.range, meta.diff.header -->
+
+```diff
+- deleted        // markup.deleted, meta.diff.header.from-file, punctuation.definition.deleted
++ inserted       // markup.inserted, meta.diff.header.to-file, punctuation.definition.inserted
+! changed        // markup.changed, punctuation.definition.changed
+@@ range @@      // meta.diff.range
+--- header       // meta.diff.header
+```
+
+## <!-- meta.separator -->
+
+<!-- meta.output -->
+
+```
+output
+```
 
 <!-- constant.other.reference.link, string.other.link -->
 
-**Reference-style links:**
+[OpenAI](https://openai.com)
 
-[OpenAI][1]
+<!-- markup.fenced_code.block.markdown, markup.raw.block.markdown -->
 
-[1]: https://openai.com
+```
+code block
+```
 
-<!-- meta.separator -->
+<!-- punctuation.definition.fenced.markdown -->
 
----
+```
+fenced code block
+```
 
-<!-- markup.inline.raw -->
+<!-- entity.name.tag -->
 
-**Emphasis inside code:**
+```html
+<div>
+  <span>Entity Name Tag</span>
+  <custom-element>Custom Tag</custom-element>
+  <MyComponent />
+</div>
+```
 
-`*not italic*` and `**not bold**`
+<!-- storage.modifier.package, storage.modifier.import, storage.type.java -->
 
-<!-- meta.separator -->
+```java
+package com.example; // storage.modifier.package
+import java.util.List; // storage.modifier.import
 
----
-
-<!-- markup.inline.raw -->
-
-**Escaped characters:** \* \_ \` \[ \] \( \) \# \+ \- \. \!
-
-<!-- meta.separator -->
-
----
+public class Test {
+    private int number; // storage.type.java for 'int'
+    private String text; // storage.type.java for 'String'
+}
+```
