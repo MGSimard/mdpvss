@@ -15,10 +15,12 @@
 
 ## Color Palette
 
-- oklch(0.7583 0.1638 59.01) - Orange
+- oklch(1 0 0) - White
+- oklch(0.8624 0.0066 17.29) - Grey
 - oklch(0.8314 0.2088 153.08) - Green (Mint Jungle)
 - oklch(0.5552 0.1703 257.32) - Blue (Yale Steel)
 - oklch(0.5724 0.2706 303.91) - Violet Purple
+- oklch(0.7583 0.1638 59.01) - Orange
 - oklch(0.8072 0.1498 81.8) - Yellow (Gold)
 
 ### Dark
