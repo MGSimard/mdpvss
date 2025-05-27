@@ -465,7 +465,7 @@ td {
 }
 #card-trim {
   flex-shrink: 0;
-  width: 3rem;
+  width: 4rem;
   background: var(--clrEleBorderIdle);
   padding-right: 1px;
   clip-path: polygon(
@@ -553,13 +553,30 @@ td {
 .markdown-raw-highlighted {
   pointer-events: none;
 }
+/* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
+#markdown-raw.show-line-numbers .markdown-raw-highlighted code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+#markdown-raw.show-line-numbers .markdown-raw-highlighted code .line {
+  position: relative;
+}
+#markdown-raw.show-line-numbers .markdown-raw-highlighted code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: -5.5rem;
+  text-align: right;
+  color: var(--clrTextMuted);
+  width: 3ch;
+  overflow: hidden;
+}
 .markdown-raw-highlighted::selection {
   color: transparent;
   user-select: none;
   pointer-events: none;
   touch-action: none;
 }
-
 #markdown-raw textarea,
 .markdown-raw-highlighted {
   width: 100%;
@@ -578,9 +595,7 @@ code,
   white-space: pre-wrap;
   word-break: break-all;
   overflow-wrap: anywhere;
-  overflow: hidden;
 }
-
 /* RENDERED MARKDOWN */
 #markdown-rendered {
   min-height: 1lh;

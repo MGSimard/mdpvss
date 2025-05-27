@@ -7,7 +7,7 @@ import remarkRemoveComments from "remark-remove-comments";
 import { myTheme } from "@/utils/2077";
 
 export function Markdown() {
-  const { previewRenderedMarkdown } = useSettingsStore();
+  const { previewRenderedMarkdown, visibleLineNumbers } = useSettingsStore();
   const [textareaContent, setTextareaContent] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -23,7 +23,7 @@ export function Markdown() {
       </ReactMarkdown>
     </div>
   ) : (
-    <div id="markdown-raw">
+    <div id="markdown-raw" className={visibleLineNumbers ? "show-line-numbers" : ""}>
       <textarea
         ref={textareaRef}
         value={textareaContent}
