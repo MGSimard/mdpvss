@@ -536,10 +536,7 @@ hr {
 #markdown-raw {
   position: relative;
 }
-.markdown-raw-highlighted {
-  pointer-events: none;
-}
-#card-content textarea {
+#markdown-raw textarea {
   all: unset;
   resize: none;
   position: absolute;
@@ -555,7 +552,17 @@ hr {
     background: var(--clrEleOverlayEnabled);
   }
 }
-#card-content textarea,
+.markdown-raw-highlighted {
+  pointer-events: none;
+}
+.markdown-raw-highlighted::selection {
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+  touch-action: none;
+}
+
+#markdown-raw textarea,
 .markdown-raw-highlighted {
   width: 100%;
   min-height: 1lh;
@@ -564,13 +571,7 @@ hr {
   font-weight: 200;
   font-size: 1.6rem;
 }
-.markdown-raw-highlighted::selection {
-  color: transparent;
-  user-select: none;
-  pointer-events: none;
-  touch-action: none;
-}
-#card-content textarea,
+#markdown-raw textarea,
 .markdown-raw-highlighted,
 pre,
 code,
