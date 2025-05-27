@@ -123,7 +123,7 @@ greet("World");
 # Python code block
 def greet(name):
     """This is a docstring"""
-    return f"Hello, {name}!"
+    return "Hello, {name}!"
 greet("World")
 ```
 
