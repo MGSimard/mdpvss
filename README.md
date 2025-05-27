@@ -2,8 +2,6 @@
 
 ## Task List
 
-- [ ] Need to find a good monospace font
-- [ ] Finish up both custom shiki theme & css
 - [ ] Think about saving text in localstorage in case someone accidentally reloads/leaves etc
 
 - [ ] Format Code button
