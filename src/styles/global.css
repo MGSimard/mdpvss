@@ -122,6 +122,9 @@ td {
   padding: 0.2em 0.5em;
   border: 1px solid var(--clrPrimary);
 }
+p:not(:last-child) {
+  margin-bottom: 1em;
+}
 /**/
 /* HELPERS */
 .sr-only {
