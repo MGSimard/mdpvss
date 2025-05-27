@@ -38,7 +38,7 @@
   --clrTextMuted: oklch(0.4701 0.0112 285.96);
 }
 ::selection {
-  color: var(--clrBg);
+  /* Todo find good color */
   background: var(--clrEleOverlayEnabled);
 }
 /* CORE */
