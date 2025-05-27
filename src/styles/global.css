@@ -98,33 +98,6 @@ img {
   display: block;
   max-width: 100%;
 }
-ul,
-ol {
-  margin-left: 1em;
-}
-li input[type="checkbox"] {
-  vertical-align: middle;
-}
-pre,
-code {
-  font-family: var(--monoFont);
-  font-weight: 200;
-}
-hr {
-  margin: 1em 0;
-  border-color: var(--clrTextMuted);
-}
-table {
-  border-collapse: collapse;
-}
-th,
-td {
-  padding: 0.2em 0.5em;
-  border: 1px solid var(--clrPrimary);
-}
-p:not(:last-child) {
-  margin-bottom: 1em;
-}
 /**/
 /* HELPERS */
 .sr-only {
@@ -572,7 +545,6 @@ p:not(:last-child) {
   pointer-events: none;
   touch-action: none;
 }
-
 #markdown-raw textarea,
 .markdown-raw-highlighted {
   width: 100%;
@@ -592,4 +564,42 @@ code,
   word-break: break-all;
   overflow-wrap: anywhere;
   overflow: hidden;
+}
+/* RENDERED MARKDOWN */
+#markdown-rendered ul,
+#markdown-rendered ol {
+  margin-left: 1em;
+}
+#markdown-rendered li input[type="checkbox"] {
+  vertical-align: middle;
+}
+#markdown-rendered pre,
+#markdown-rendered code {
+  font-family: var(--monoFont);
+  font-weight: 200;
+}
+#markdown-rendered p,
+#markdown-rendered blockquote,
+#markdown-rendered ul,
+#markdown-rendered ol,
+#markdown-rendered dl,
+#markdown-rendered table,
+#markdown-rendered pre,
+#markdown-rendered details {
+  padding: 0.5em;
+  border-left: 0.5em solid var(--clrEleBorderIdle);
+  background-color: var(--clrEleBorderIdle);
+  font-style: italic;
+}
+#markdown-rendered hr {
+  margin: 1em 0;
+  border-color: var(--clrTextMuted);
+}
+#markdown-rendered table {
+  border-collapse: collapse;
+}
+#markdown-rendered th,
+#markdown-rendered td {
+  padding: 0.2em 0.5em;
+  border: 1px solid var(--clrPrimary);
 }
