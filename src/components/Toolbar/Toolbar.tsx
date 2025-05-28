@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
-import { CyclePadding } from "./CyclePadding";
-import { ToggleTheme } from "./ToggleTheme";
-import { ToggleBackground } from "./ToggleBackground";
-import { ToggleLineNumbers } from "./ToggleLineNumbers";
-import { TogglePreview } from "./TogglePreview";
+import { CyclePadding } from "@/components/Toolbar/CyclePadding";
+import { ToggleTheme } from "@/components/Toolbar/ToggleTheme";
+import { ToggleBackground } from "@/components/Toolbar/ToggleBackground";
+import { ToggleLineNumbers } from "@/components/Toolbar/ToggleLineNumbers";
+import { TogglePreview } from "@/components/Toolbar/TogglePreview";
+import { DownloadImg } from "@/components/Toolbar/DownloadImg";
 import { IconEllipsis, IconMinus } from "@/components/Icons";
 
 export function Toolbar() {
@@ -32,6 +33,7 @@ export function Toolbar() {
             <ToggleBackground />
             <ToggleLineNumbers />
             <TogglePreview />
+            <DownloadImg />
           </div>
         </div>
       </div>

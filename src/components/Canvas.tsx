@@ -1,9 +1,9 @@
 import { useSettingsStore } from "@/store/useSettingsStore";
 import { Markdown } from "@/components/Markdown";
-import { FileName } from "./FileName";
+import { FileName } from "@/components/FileName";
 
 export function Canvas() {
-  const { visibleBackground, padding, visibleLineNumbers } = useSettingsStore();
+  const { visibleBackground, padding } = useSettingsStore();
 
   return (
     <div id="canvas" className={visibleBackground ? "" : "bg-transparent"} style={{ padding: `${padding}px` }}>
@@ -13,7 +13,6 @@ export function Canvas() {
             <div id="card-trim-inner"></div>
           </div>
           <div id="card-content">
-            {/* <div id="line-numbers">handle this later</div> */}
             <div id="card-editable">
               <FileName />
               <Markdown />

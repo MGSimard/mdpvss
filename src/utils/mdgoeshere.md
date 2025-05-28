@@ -70,16 +70,6 @@ Here is a reference-style link:
 
 [ref]: https://www.example.com/reference "Reference Title"
 
-## Images
-
-Here is an inline image:
-![Alt text](https://via.placeholder.com/150 "Placeholder Image")
-
-Here is a reference-style image:
-![Alt text for reference image][imgref]
-
-[imgref]: https://via.placeholder.com/150/0000FF/FFFFFF "Blue Placeholder Image"
-
 ## Blockquotes
 
 > This is a blockquote.
