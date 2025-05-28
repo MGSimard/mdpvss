@@ -3,11 +3,7 @@
 ## Task List
 
 - [ ] Think about saving text in localstorage in case someone accidentally reloads/leaves etc
-
-- [ ] Format Code button
-- [ ] Export as [PNG/SVG]
-- [ ] Copy PNG to clipboard
-- [ ] Image output size [?/?/?]
+- [ ] Fix bug where table contents get wrapped in screenshots even when there's space, causing vertical overflow at the bottom due to mismatching computed height.
 
 - [ ] Metadata
 
