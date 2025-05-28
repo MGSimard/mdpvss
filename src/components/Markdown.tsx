@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import ShikiHighlighter, { rehypeInlineCodeProperty } from "react-shiki";
 import ReactMarkdown from "react-markdown";
@@ -12,6 +12,17 @@ export function Markdown() {
   const { theme } = useTheme();
   const [textareaContent, setTextareaContent] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    const savedContent = localStorage.getItem("markdownContent");
+    if (savedContent) {
+      setTextareaContent(savedContent);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("markdownContent", textareaContent);
+  }, [textareaContent]);
 
   return (
     <>

@@ -2,8 +2,8 @@
 
 ## Task List
 
-- [ ] Think about saving text in localstorage in case someone accidentally reloads/leaves etc
 - [ ] Fix bug where table contents get wrapped in screenshots even when there's space, causing vertical overflow at the bottom due to mismatching computed height.
+- [ ] Fix bug where pasting or starting in codeblocks raw isn't highlighted until you type something
 
 - [ ] Metadata
 
