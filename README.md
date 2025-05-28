@@ -6,8 +6,9 @@ I wanted a formatted markdown screenshotter and ray.so only supported raw, so I 
 
 - [ ] Fix bug where table contents get wrapped in screenshots even when there's space, causing vertical overflow at the bottom due to mismatching computed height.
 - [ ] Fix bug where pasting or starting in codeblocks raw isn't highlighted until you type something
+- [ ] Remember to not make the canvas borders part of the screenshottable node (for hidden background purposes)
 
-- [ ] Metadata
+- [x] Metadata
 
 ## Color Palette
 
