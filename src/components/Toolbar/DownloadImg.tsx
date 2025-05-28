@@ -12,7 +12,7 @@ export function DownloadImg() {
       })
       .catch((error) => {
         alert("ERROR: Failed to download image. View console for details.");
-        console.warn("ERROR:Failed to download image.", error);
+        console.warn("ERROR: Failed to download image.", error);
       });
   };
 
