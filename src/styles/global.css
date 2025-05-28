@@ -5,7 +5,7 @@
   --monoFont: "JetBrains Mono", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
   /* DARK FALLBACK */
-  --clrPrimary: oklch(0.6565 0.2298 24.01);
+  --clrPrimary: oklch(0.6625 0.2045 26.71);
   --clrSecondary: oklch(0.8965 0.1273 200.71);
   --clrBg: oklch(0.1685 0.0187 284.21);
 
