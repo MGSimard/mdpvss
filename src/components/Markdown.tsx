@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import ShikiHighlighter, { rehypeInlineCodeProperty } from "react-shiki";
 import ReactMarkdown from "react-markdown";

@@ -28,9 +28,9 @@ export function Toolbar() {
         <div id="toolbar-content" inert={isOpen ? false : true}>
           <div>
             <ToggleTheme />
+            <CyclePadding />
             <ToggleBackground />
             <ToggleLineNumbers />
-            <CyclePadding />
             <TogglePreview />
           </div>
         </div>
