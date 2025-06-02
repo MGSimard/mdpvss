@@ -369,6 +369,7 @@ code {
 /* RESIZABLE CANVAS WRAPPER */
 #resizable-canvas-wrapper {
   position: relative;
+  border: 1px solid var(--clrEleBorderIdle);
 }
 #handle-left,
 #handle-right {
@@ -420,7 +421,6 @@ code {
   background: radial-gradient(circle at center -50%, oklch(from var(--clrPrimary) l c h / 0.2), var(--clrBg) 100%);
   background-repeat: no-repeat;
   transition: padding 0.2s ease-in-out;
-  border: 1px solid var(--clrEleBorderIdle);
   line-height: 1.2;
   &.bg-transparent {
     background: transparent;
