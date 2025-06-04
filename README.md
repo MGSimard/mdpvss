@@ -16,4 +16,4 @@ I wanted a formatted markdown screenshotter and ray.so only supported raw, so I 
 
 - [ ] Might have to not use CSS count for line numbers, doesn't get caught by screenshotter
 - [ ] Fix bug where pasting or starting in codeblocks raw isn't highlighted until you type something
-
+- [ ] OKLCH bg gradient looks weird in some browsers
